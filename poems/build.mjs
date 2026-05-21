@@ -39,6 +39,7 @@ const COLLECTIONS = [
       { heading: 'from The Wind-Up Doll (عروسک کوکی)',                                                slug: 'forough-the-wind-up-doll', title: 'from The Wind-Up Doll',                      author: 'Forough Farrokhzad' },
       { heading: 'The Wall (دیوار)',                                                                  slug: 'forough-the-wall',        title: 'The Wall',                                    author: 'Forough Farrokhzad' },
       { heading: 'Sin (گناه)',                                                                        slug: 'forough-sin',             title: 'Sin',                                         author: 'Forough Farrokhzad' },
+      { heading: 'Lost (گمشده)',                                                                      slug: 'forough-lost',            title: 'Lost',                                        author: 'Forough Farrokhzad' },
       { heading: 'from The Window (پنجره)',                                                           slug: 'forough-the-window',      title: 'from The Window',                             author: 'Forough Farrokhzad' },
       { heading: 'from Only the Voice Remains (تنها صداست که می‌ماند)',                                slug: 'forough-only-the-voice',  title: 'from Only the Voice Remains',                 author: 'Forough Farrokhzad' },
       { heading: 'Ghazal — اگر آن ترک شیرازی',                                                        slug: 'hafez-shirazi-turk',      title: 'Ghazal — "If that Shirazi beauty"',           author: 'Hafez' },
