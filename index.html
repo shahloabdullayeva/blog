@@ -14,11 +14,6 @@
 
   <main>
     <ul class="tree">
-      <li>diary
-        <ul id="diary-list" data-manifest="posts/index.json" data-limit="3" data-all="diary.html" aria-busy="true">
-          <li class="loading">Loading…</li>
-        </ul>
-      </li>
       <li>library
         <ul>
           <li>translations
@@ -42,6 +37,14 @@
           <li><a href="https://www.goodreads.com/charlotte1384" target="_blank" rel="noopener">goodreads</a></li>
           <li><a href="https://github.com/shahloabdullayeva" target="_blank" rel="noopener">github</a></li>
         </ul>
+      </li>
+      <li>
+        <details>
+          <summary>diary</summary>
+          <ul id="diary-list" data-manifest="posts/index.json" data-limit="3" data-all="diary.html" aria-busy="true">
+            <li class="loading">Loading…</li>
+          </ul>
+        </details>
       </li>
       <li class="dim">contact (soon)</li>
     </ul>
