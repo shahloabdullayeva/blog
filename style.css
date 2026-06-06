@@ -225,3 +225,23 @@ a:hover { text-decoration: underline; }
 }
 
 .contact-form button:hover { filter: brightness(1.1); }
+
+.post-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+
+.post-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  max-width: 48%;
+}
+
+.post-nav a:hover { text-decoration: underline; }
+
+.post-nav-prev { margin-inline-end: auto; }
+.post-nav-next { margin-inline-start: auto; text-align: end; }
