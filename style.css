@@ -176,3 +176,52 @@ a:hover { text-decoration: underline; }
   direction: ltr;
   text-align: left;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0.5rem 0 0;
+  max-width: 28rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+  color: var(--fg);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.55rem 0.7rem;
+  width: 100%;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover { filter: brightness(1.1); }
