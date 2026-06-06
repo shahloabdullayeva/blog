@@ -102,8 +102,35 @@ async function loadPost() {
 
     if (indexRes.ok) {
       const items = await indexRes.json();
-      const meta = items.find(p => p.slug === slug);
+      if (items.length && items[0].date) {
+        items.sort((a, b) => b.date.localeCompare(a.date));
+      }
+      const idx = items.findIndex(p => p.slug === slug);
+      const meta = idx !== -1 ? items[idx] : null;
       if (meta) document.title = `${meta.title} — Charlotte`;
+
+      if (type === 'post' && idx !== -1) {
+        const nav = document.getElementById('post-nav');
+        const prev = items[idx + 1];
+        const next = items[idx - 1];
+        if (nav && (prev || next)) {
+          const prevEl = document.getElementById('post-prev');
+          const nextEl = document.getElementById('post-next');
+          if (prev) {
+            prevEl.href = `post.html?slug=${encodeURIComponent(prev.slug)}`;
+            prevEl.textContent = `← ${prev.title}`;
+          } else {
+            prevEl.hidden = true;
+          }
+          if (next) {
+            nextEl.href = `post.html?slug=${encodeURIComponent(next.slug)}`;
+            nextEl.textContent = `${next.title} →`;
+          } else {
+            nextEl.hidden = true;
+          }
+          nav.hidden = false;
+        }
+      }
     }
   } catch (err) {
     article.innerHTML = `<p class="error">Couldn't load: ${escapeHtml(err.message)}</p>`;
