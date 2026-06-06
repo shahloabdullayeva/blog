@@ -10,6 +10,7 @@ if (isPostPage) {
   document.querySelectorAll('[data-manifest]').forEach(list => {
     loadList(list, list.dataset.manifest, {
       type: list.dataset.type,
+      lang: list.dataset.lang,
       allHref: list.dataset.all,
       limit: parseInt(list.dataset.limit, 10) || Infinity,
     });
@@ -26,14 +27,16 @@ async function loadList(list, manifestUrl, options = {}) {
 
     const visible = items.slice(0, options.limit || Infinity);
     const typeParam = options.type ? `&type=${encodeURIComponent(options.type)}` : '';
+    const langParam = options.lang ? `&lang=${encodeURIComponent(options.lang)}` : '';
 
     let html = '';
     if (visible.length === 0) {
       html += '<li class="dim">(nothing yet)</li>';
     } else {
-      html += visible.map(item =>
-        `<li><a href="post.html?slug=${encodeURIComponent(item.slug)}${typeParam}">${escapeHtml(item.title)}</a></li>`
-      ).join('');
+      html += visible.map(item => {
+        const author = item.author ? ` <span class="dim">— ${escapeHtml(item.author)}</span>` : '';
+        return `<li><a href="post.html?slug=${encodeURIComponent(item.slug)}${typeParam}${langParam}">${escapeHtml(item.title)}</a>${author}</li>`;
+      }).join('');
     }
 
     if (options.allHref) {
