@@ -8,5 +8,520 @@
     "duration": 228,
     "youtube": "b7kmP1fsGg8",
     "date": "2026-06-17"
+  },
+  {
+    "id": "eyes-without-a-face",
+    "artist": "Billy Idol",
+    "title": "Eyes Without a Face",
+    "album": "Rebel Yell",
+    "duration": 299,
+    "youtube": "9OFpfTd0EIs",
+    "date": "1984-06-06"
+  },
+  {
+    "id": "every-breath-you-take",
+    "artist": "The Police",
+    "title": "Every Breath You Take",
+    "album": "Synchronicity",
+    "duration": 253,
+    "youtube": "OMOGaugKpzs",
+    "date": "1983-05-20"
+  },
+  {
+    "id": "died-in-your-arms",
+    "artist": "Cutting Crew",
+    "title": "(I Just) Died in Your Arms",
+    "album": "Broadcast",
+    "duration": 279,
+    "youtube": "6dOwHzCHfgA",
+    "date": "1986-06-01"
+  },
+  {
+    "id": "good-4-u",
+    "artist": "Olivia Rodrigo",
+    "title": "good 4 u",
+    "album": "SOUR",
+    "duration": 178,
+    "youtube": "gNi_6U5Pm_o",
+    "date": "2021-05-14"
+  },
+  {
+    "id": "careless-whisper",
+    "artist": "George Michael",
+    "title": "Careless Whisper",
+    "album": "Make It Big",
+    "duration": 304,
+    "youtube": "izGwDsrQ1eQ",
+    "date": "1984-07-24"
+  },
+  {
+    "id": "i-was-made-for-lovin-you",
+    "artist": "KISS",
+    "title": "I Was Made for Lovin' You",
+    "album": "Dynasty",
+    "duration": 271,
+    "youtube": "9mQWZ4sWkHU",
+    "date": "1979-05-15"
+  },
+  {
+    "id": "creep",
+    "artist": "Radiohead",
+    "title": "Creep",
+    "album": "Pablo Honey",
+    "duration": 237,
+    "youtube": "XFkzRNyygfk",
+    "date": "1992-09-21"
+  },
+  {
+    "id": "freaks",
+    "artist": "Surf Curse",
+    "title": "Freaks",
+    "album": "Buds",
+    "duration": 147,
+    "youtube": "NfMegACVJQw",
+    "date": "2013-01-01"
+  },
+  {
+    "id": "we-are-the-people",
+    "artist": "Empire of the Sun",
+    "title": "We Are the People",
+    "album": "Walking on a Dream",
+    "duration": 267,
+    "youtube": "hN5X4kGhAtU",
+    "date": "2009-05-11"
+  },
+  {
+    "id": "back-to-black",
+    "artist": "Amy Winehouse",
+    "title": "Back to Black",
+    "album": "Back to Black",
+    "duration": 240,
+    "youtube": "0WuqXvfLNj0",
+    "date": "2006-10-27"
+  },
+  {
+    "id": "as-it-was",
+    "artist": "Harry Styles",
+    "title": "As It Was",
+    "album": "Harry's House",
+    "duration": 167,
+    "youtube": "H5v3kku4y6Q",
+    "date": "2022-04-01"
+  },
+  {
+    "id": "this-is-me-trying",
+    "artist": "Taylor Swift",
+    "title": "this is me trying",
+    "album": "folklore",
+    "duration": 196,
+    "youtube": "9bdLTPNrlEg",
+    "date": "2020-07-24"
+  },
+  {
+    "id": "cruel-summer",
+    "artist": "Taylor Swift",
+    "title": "Cruel Summer",
+    "album": "Lover",
+    "duration": 178,
+    "youtube": "ic8j13piAhQ",
+    "date": "2019-08-23"
+  },
+  {
+    "id": "all-too-well-10-min",
+    "artist": "Taylor Swift",
+    "title": "All Too Well (10 Minute Version) (Taylor's Version)",
+    "album": "Red (Taylor's Version)",
+    "duration": 613,
+    "youtube": "sRxrwjOtIag",
+    "date": "2021-11-12"
+  },
+  {
+    "id": "lover",
+    "artist": "Taylor Swift",
+    "title": "Lover",
+    "album": "Lover",
+    "duration": 221,
+    "youtube": "-BjZmE2gtdo",
+    "date": "2019-08-23"
+  },
+  {
+    "id": "style",
+    "artist": "Taylor Swift",
+    "title": "Style",
+    "album": "1989",
+    "duration": 231,
+    "youtube": "-CmadmM5cOk",
+    "date": "2014-10-27"
+  },
+  {
+    "id": "i-can-do-it-with-a-broken-heart",
+    "artist": "Taylor Swift",
+    "title": "I Can Do It With a Broken Heart",
+    "album": "THE TORTURED POETS DEPARTMENT",
+    "duration": 218,
+    "youtube": "i8_w_m6HLJ0",
+    "date": "2024-04-19"
+  },
+  {
+    "id": "daylight",
+    "artist": "Taylor Swift",
+    "title": "Daylight",
+    "album": "Lover",
+    "duration": 293,
+    "youtube": "u9raS7-NisU",
+    "date": "2019-08-23"
+  },
+  {
+    "id": "cardigan",
+    "artist": "Taylor Swift",
+    "title": "cardigan",
+    "album": "folklore",
+    "duration": 240,
+    "youtube": "K-a8s8OLBSE",
+    "date": "2020-07-24"
+  },
+  {
+    "id": "anti-hero",
+    "artist": "Taylor Swift",
+    "title": "Anti-Hero",
+    "album": "Midnights",
+    "duration": 200,
+    "youtube": "b1kbLwvqugk",
+    "date": "2022-10-21"
+  },
+  {
+    "id": "august",
+    "artist": "Taylor Swift",
+    "title": "august",
+    "album": "folklore",
+    "duration": 261,
+    "youtube": "nn_0zPAfyo8",
+    "date": "2020-07-24"
+  },
+  {
+    "id": "i-hate-it-here",
+    "artist": "Taylor Swift",
+    "title": "I Hate It Here",
+    "album": "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
+    "duration": 243,
+    "youtube": "BpkmUfv1I4Q",
+    "date": "2024-04-19"
+  },
+  {
+    "id": "all-you-had-to-do-was-stay",
+    "artist": "Taylor Swift",
+    "title": "All You Had to Do Was Stay",
+    "album": "1989",
+    "duration": 193,
+    "youtube": "MHFrXHQpHSQ",
+    "date": "2014-10-27"
+  },
+  {
+    "id": "the-archer",
+    "artist": "Taylor Swift",
+    "title": "The Archer",
+    "album": "Lover",
+    "duration": 212,
+    "youtube": "8KpKc3C9V3w",
+    "date": "2019-08-23"
+  },
+  {
+    "id": "back-to-december",
+    "artist": "Taylor Swift",
+    "title": "Back to December",
+    "album": "Speak Now",
+    "duration": 293,
+    "youtube": "ExCuKtdWG_I",
+    "date": "2010-10-25"
+  },
+  {
+    "id": "better-man",
+    "artist": "Taylor Swift",
+    "title": "Better Man",
+    "album": "Red (Taylor's Version)",
+    "duration": 297,
+    "youtube": "PReSQYTFvcs",
+    "date": "2021-11-12"
+  },
+  {
+    "id": "call-it-what-you-want",
+    "artist": "Taylor Swift",
+    "title": "Call It What You Want",
+    "album": "reputation",
+    "duration": 204,
+    "youtube": "V54CEElTF_U",
+    "date": "2017-11-10"
+  },
+  {
+    "id": "cancelled",
+    "artist": "Taylor Swift",
+    "title": "CANCELLED!",
+    "album": "The Life of a Showgirl",
+    "duration": 211,
+    "youtube": "F-5XoUZ42Tc",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "champagne-problems",
+    "artist": "Taylor Swift",
+    "title": "champagne problems",
+    "album": "evermore",
+    "duration": 244,
+    "youtube": "wMpqCRF7TKg",
+    "date": "2020-12-11"
+  },
+  {
+    "id": "cornelia-street",
+    "artist": "Taylor Swift",
+    "title": "Cornelia Street",
+    "album": "Lover",
+    "duration": 287,
+    "youtube": "VikHHWrgb4Y",
+    "date": "2019-08-23"
+  },
+  {
+    "id": "delicate",
+    "artist": "Taylor Swift",
+    "title": "Delicate",
+    "album": "reputation",
+    "duration": 232,
+    "youtube": "tCXGJQYZ9JA",
+    "date": "2017-11-10"
+  },
+  {
+    "id": "enchanted",
+    "artist": "Taylor Swift",
+    "title": "Enchanted",
+    "album": "Speak Now",
+    "duration": 352,
+    "youtube": "aaCmUAcq170",
+    "date": "2010-10-25"
+  },
+  {
+    "id": "exile",
+    "artist": "Taylor Swift",
+    "featuring": "Bon Iver",
+    "title": "exile",
+    "album": "folklore",
+    "duration": 285,
+    "youtube": "osdoLjUNFnA",
+    "date": "2020-07-24"
+  },
+  {
+    "id": "fate-of-ophelia",
+    "artist": "Taylor Swift",
+    "title": "The Fate of Ophelia",
+    "album": "The Life of a Showgirl",
+    "duration": 226,
+    "youtube": "ko70cExuzZM",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "father-figure",
+    "artist": "Taylor Swift",
+    "title": "Father Figure",
+    "album": "The Life of a Showgirl",
+    "duration": 212,
+    "youtube": "G_PFYWa2J4U",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "fearless",
+    "artist": "Taylor Swift",
+    "title": "Fearless",
+    "album": "Fearless",
+    "duration": 241,
+    "youtube": "",
+    "date": "2008-11-11"
+  },
+  {
+    "id": "i-knew-you-were-trouble",
+    "artist": "Taylor Swift",
+    "title": "I Knew You Were Trouble",
+    "album": "Red",
+    "duration": 219,
+    "youtube": "hiVdhtELAF8",
+    "date": "2012-10-22"
+  },
+  {
+    "id": "midnight-rain",
+    "artist": "Taylor Swift",
+    "title": "Midnight Rain",
+    "album": "Midnights",
+    "duration": 174,
+    "youtube": "om_gSbBJCFY",
+    "date": "2022-10-21"
+  },
+  {
+    "id": "red",
+    "artist": "Taylor Swift",
+    "title": "Red",
+    "album": "Red",
+    "duration": 223,
+    "youtube": "ySAT-PlKx0Q",
+    "date": "2012-10-22"
+  },
+  {
+    "id": "shouldve-said-no",
+    "artist": "Taylor Swift",
+    "title": "Should've Said No",
+    "album": "Taylor Swift",
+    "duration": 244,
+    "youtube": "PfpWwEPiBCo",
+    "date": "2006-10-24"
+  },
+  {
+    "id": "so-high-school",
+    "artist": "Taylor Swift",
+    "title": "So High School",
+    "album": "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
+    "duration": 228,
+    "youtube": "w-FkV0EM_CU",
+    "date": "2024-04-19"
+  },
+  {
+    "id": "speak-now",
+    "artist": "Taylor Swift",
+    "title": "Speak Now",
+    "album": "Speak Now",
+    "duration": 240,
+    "youtube": "Gh7u-KTWUq8",
+    "date": "2010-10-25"
+  },
+  {
+    "id": "sparks-fly",
+    "artist": "Taylor Swift",
+    "title": "Sparks Fly",
+    "album": "Speak Now",
+    "duration": 260,
+    "youtube": "0FxbMW_20sQ",
+    "date": "2010-10-25"
+  },
+  {
+    "id": "tolerate-it",
+    "artist": "Taylor Swift",
+    "title": "tolerate it",
+    "album": "evermore",
+    "duration": 245,
+    "youtube": "ukxEKY_7MOc",
+    "date": "2020-12-11"
+  },
+  {
+    "id": "tortured-poets-department",
+    "artist": "Taylor Swift",
+    "title": "The Tortured Poets Department",
+    "album": "THE TORTURED POETS DEPARTMENT",
+    "duration": 293,
+    "youtube": "RQMz4JDbtmI",
+    "date": "2024-04-19"
+  },
+  {
+    "id": "willow",
+    "artist": "Taylor Swift",
+    "title": "willow",
+    "album": "evermore",
+    "duration": 214,
+    "youtube": "RsEZmictANA",
+    "date": "2020-12-11"
+  },
+  {
+    "id": "you-belong-with-me",
+    "artist": "Taylor Swift",
+    "title": "You Belong with Me",
+    "album": "Fearless",
+    "duration": 231,
+    "youtube": "VuNIsY6JdUw",
+    "date": "2008-11-11"
+  },
+  {
+    "id": "youre-on-your-own-kid",
+    "artist": "Taylor Swift",
+    "title": "You're On Your Own, Kid",
+    "album": "Midnights",
+    "duration": 194,
+    "youtube": "7Gbg6Z70J7E",
+    "date": "2022-10-21"
+  },
+  {
+    "id": "elizabeth-taylor",
+    "artist": "Taylor Swift",
+    "title": "Elizabeth Taylor",
+    "album": "The Life of a Showgirl",
+    "duration": 208,
+    "youtube": "WqbJT_vC0rs",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "opalite",
+    "artist": "Taylor Swift",
+    "title": "Opalite",
+    "album": "The Life of a Showgirl",
+    "duration": 235,
+    "youtube": "1FVF-9KQiPo",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "eldest-daughter",
+    "artist": "Taylor Swift",
+    "title": "Eldest Daughter",
+    "album": "The Life of a Showgirl",
+    "duration": 246,
+    "youtube": "HwQnW_ZRKhc",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "ruin-the-friendship",
+    "artist": "Taylor Swift",
+    "title": "Ruin the Friendship",
+    "album": "The Life of a Showgirl",
+    "duration": 220,
+    "youtube": "WQCPl5rTMDQ",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "actually-romantic",
+    "artist": "Taylor Swift",
+    "title": "Actually Romantic",
+    "album": "The Life of a Showgirl",
+    "duration": 163,
+    "youtube": "ogT8ad6kKz4",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "wish-list",
+    "artist": "Taylor Swift",
+    "title": "Wi$h Li$t",
+    "album": "The Life of a Showgirl",
+    "duration": 207,
+    "youtube": "wqgUzLHgNMI",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "wood",
+    "artist": "Taylor Swift",
+    "title": "Wood",
+    "album": "The Life of a Showgirl",
+    "duration": 150,
+    "youtube": "6m50keINEOI",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "honey",
+    "artist": "Taylor Swift",
+    "title": "Honey",
+    "album": "The Life of a Showgirl",
+    "duration": 181,
+    "youtube": "4-EzK5UB40U",
+    "date": "2025-10-03"
+  },
+  {
+    "id": "life-of-a-showgirl",
+    "artist": "Taylor Swift",
+    "featuring": "Sabrina Carpenter",
+    "title": "The Life of a Showgirl",
+    "album": "The Life of a Showgirl",
+    "duration": 241,
+    "youtube": "OU6362Nggg0",
+    "date": "2025-10-03"
   }
 ]
