@@ -1,0 +1,5 @@
+# Database dumps / backups — never commit these (contain credentials)
+*.sql
+*.sql.gz
+*.dump
+llc_backup.sql
