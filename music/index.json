@@ -523,5 +523,59 @@
     "duration": 241,
     "youtube": "OU6362Nggg0",
     "date": "2025-10-03"
+  },
+  {
+    "id": "total-eclipse-of-the-heart",
+    "artist": "Bonnie Tyler",
+    "title": "Total Eclipse of the Heart",
+    "album": "Faster Than the Speed of Night",
+    "duration": 334,
+    "youtube": "lcOxhH8N3Bo",
+    "date": "1983-02-11"
+  },
+  {
+    "id": "life-goes-on",
+    "artist": "Oliver Tree",
+    "title": "Life Goes On",
+    "album": "Ugly Is Beautiful (Deluxe)",
+    "duration": 161,
+    "youtube": "8F2s8ivKXNY",
+    "date": "2021-05-28"
+  },
+  {
+    "id": "new-rules",
+    "artist": "Dua Lipa",
+    "title": "New Rules",
+    "album": "Dua Lipa",
+    "duration": 209,
+    "youtube": "k2qgadSvNyU",
+    "date": "2017-06-02"
+  },
+  {
+    "id": "material-girl",
+    "artist": "Madonna",
+    "title": "Material Girl",
+    "album": "Like a Virgin",
+    "duration": 241,
+    "youtube": "6p-lDYPR2P8",
+    "date": "1985-01-30"
+  },
+  {
+    "id": "the-emptiness-machine",
+    "artist": "Linkin Park",
+    "title": "The Emptiness Machine",
+    "album": "From Zero",
+    "duration": 190,
+    "youtube": "SRXH9AbT280",
+    "date": "2024-09-05"
+  },
+  {
+    "id": "my-boy-only-breaks-his-favorite-toys",
+    "artist": "Taylor Swift",
+    "title": "My Boy Only Breaks His Favorite Toys",
+    "album": "THE TORTURED POETS DEPARTMENT",
+    "duration": 203,
+    "youtube": "q1akFrXlIEo",
+    "date": "2024-04-19"
   }
 ]
