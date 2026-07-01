@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>music — Charlotte</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x2ltfi5nrw");
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title"><a href="./">Charlotte.</a></h1>
+  </header>
+
+  <main>
+    <ul class="tree">
+      <li><a href="./">← back</a></li>
+      <li>music
+        <ul id="music-list" aria-busy="true">
+          <li class="loading">Loading…</li>
+        </ul>
+      </li>
+    </ul>
+  </main>
+
+  <script>
+    (function () {
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      var list = document.getElementById('music-list');
+      fetch('music/index.json')
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (items) {
+          if (items.length && items[0].date) {
+            items.sort(function (a, b) { return b.date.localeCompare(a.date); });
+          }
+          if (!items.length) {
+            list.innerHTML = '<li class="dim">(nothing yet)</li>';
+          } else {
+            list.innerHTML = items.map(function (s) {
+              var by = s.artist ? ' <span class="dim">— ' + escapeHtml(s.artist) + '</span>' : '';
+              return '<li><a href="song.html?id=' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
+            }).join('');
+          }
+          list.removeAttribute('aria-busy');
+        })
+        .catch(function (err) {
+          list.innerHTML = '<li class="error">Couldn\'t load: ' + escapeHtml(err.message) + '</li>';
+          list.removeAttribute('aria-busy');
+        });
+    })();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
