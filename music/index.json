@@ -1652,11 +1652,11 @@
   {
     "id": "this-love",
     "artist": "Taylor Swift",
-    "title": "This Love",
-    "album": "1989",
+    "title": "This Love (Taylor’s Version)",
+    "album": "1989 (Taylor’s Version)",
     "duration": 250,
-    "youtube": "",
-    "date": "2014-10-27"
+    "youtube": "mvxQYPR4lmU",
+    "date": "2023-10-27"
   },
   {
     "id": "just-dance",
@@ -1850,11 +1850,11 @@
   {
     "id": "long-live",
     "artist": "Taylor Swift",
-    "title": "Long Live",
-    "album": "Speak Now",
+    "title": "Long Live (Taylor’s Version)",
+    "album": "Speak Now (Taylor’s Version)",
     "duration": 317,
-    "youtube": "",
-    "date": "2010-10-25"
+    "youtube": "F5TMU6916U8",
+    "date": "2023-07-07"
   },
   {
     "id": "i-dont-wanna-live-forever",
@@ -1900,5 +1900,23 @@
     "duration": 179,
     "youtube": "kknKs7cAcO8",
     "date": "2015-08-14"
+  },
+  {
+    "id": "master-of-puppets",
+    "artist": "Metallica",
+    "title": "Master of Puppets",
+    "album": "Master of Puppets",
+    "duration": 516,
+    "youtube": "E0ozmU9cJDg",
+    "date": "1986-03-03"
+  },
+  {
+    "id": "enter-sandman",
+    "artist": "Metallica",
+    "title": "Enter Sandman",
+    "album": "Metallica (The Black Album)",
+    "duration": 331,
+    "youtube": "CD-E-LDc384",
+    "date": "1991-08-12"
   }
 ]
