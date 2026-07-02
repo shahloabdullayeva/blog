@@ -156,6 +156,24 @@ a:hover { text-decoration: underline; }
 
 .post a { text-decoration: underline; text-underline-offset: 2px; }
 
+#music-search {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  color: var(--fg);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  margin: 0.4rem 0 0.6rem;
+  width: 100%;
+  max-width: 20rem;
+}
+
+#music-search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
 .dim { color: var(--fg-muted); }
 
 .loading, .error {

@@ -24,6 +24,7 @@
     <ul class="tree">
       <li><a href="./">← back</a></li>
       <li>music
+        <input id="music-search" type="search" placeholder="filter by title or artist…" autocomplete="off" aria-label="Filter songs" />
         <ul id="music-list" aria-busy="true">
           <li class="loading">Loading…</li>
         </ul>
@@ -39,19 +40,47 @@
         });
       }
       var list = document.getElementById('music-list');
+      var search = document.getElementById('music-search');
+      var songs = [];
+
+      // Fisher–Yates shuffle — reshuffles on every page load
+      function shuffle(a) {
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+      }
+
+      function render(items) {
+        if (!items.length) {
+          list.innerHTML = '<li class="dim">(no matches)</li>';
+          return;
+        }
+        list.innerHTML = items.map(function (s) {
+          var by = s.artist ? ' <span class="dim">— ' + escapeHtml(s.artist) + '</span>' : '';
+          return '<li><a href="song.html?id=' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
+        }).join('');
+      }
+
+      function applyFilter() {
+        var q = search.value.trim().toLowerCase();
+        if (!q) { render(songs); return; }
+        render(songs.filter(function (s) {
+          return (s.title + ' ' + (s.artist || '')).toLowerCase().indexOf(q) !== -1;
+        }));
+      }
+
+      search.addEventListener('input', applyFilter);
+
       fetch('music/index.json')
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (items) {
-          if (items.length && items[0].date) {
-            items.sort(function (a, b) { return b.date.localeCompare(a.date); });
-          }
+          songs = shuffle(items.slice());
           if (!items.length) {
             list.innerHTML = '<li class="dim">(nothing yet)</li>';
           } else {
-            list.innerHTML = items.map(function (s) {
-              var by = s.artist ? ' <span class="dim">— ' + escapeHtml(s.artist) + '</span>' : '';
-              return '<li><a href="song.html?id=' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
-            }).join('');
+            applyFilter();
           }
           list.removeAttribute('aria-busy');
         })
