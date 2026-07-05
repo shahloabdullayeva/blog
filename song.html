@@ -41,6 +41,16 @@
   .sync button:hover { color: var(--text-muted); border-color: var(--border-strong); }
   .sync .val { min-width: 42px; text-align: center; font-size: 10px; color: var(--text-muted); font-family: inherit; }
 
+  .nav { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+  .nav button {
+    height: 26px; padding: 0 12px; border-radius: 6px;
+    background: transparent; color: var(--text-muted);
+    border: 1px solid var(--border); cursor: pointer;
+    font-size: 11px; font-weight: 700; font-family: inherit; letter-spacing: 0.04em;
+  }
+  .nav button:hover { color: var(--text); border-color: var(--border-strong); }
+  .nav button:disabled { opacity: 0.35; cursor: default; color: var(--text-sub); }
+
   .main { display: flex; gap: 16px; margin-top: 10px; }
   .video-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
   .video-frame {
@@ -89,6 +99,10 @@
         <span class="val" id="offVal">+0.0s</span>
         <button id="pp" title="pull lyrics earlier">+</button>
         <button id="p1" title="pull lyrics 1s earlier">+1s</button>
+      </div>
+      <div class="nav">
+        <button id="prevBtn" title="previous song" disabled>← prev</button>
+        <button id="nextBtn" title="next song" disabled>next →</button>
       </div>
     </div>
 
@@ -222,13 +236,21 @@
   }
   function stopPolling() { if (pollId) { clearInterval(pollId); pollId = null; } }
 
+  var nextId = "";
+
+  function goToNext() { if (nextId) location.href = "song.html?id=" + encodeURIComponent(nextId); }
+
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player("ytHost", {
       videoId: YOUTUBE_ID,
-      playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
+      playerVars: { rel: 0, modestbranding: 1, playsinline: 1, autoplay: 1 },
       events: {
-        onReady: function () { ready = true; },
-        onStateChange: function (e) { playing = e.data === 1; if (playing) startPolling(); else stopPolling(); }
+        onReady: function () { ready = true; player.playVideo(); },
+        onStateChange: function (e) {
+          playing = e.data === 1;
+          if (playing) startPolling(); else stopPolling();
+          if (e.data === 0) goToNext(); // ended → auto-advance
+        }
       }
     });
   };
@@ -253,8 +275,24 @@
     .then(function (r) { return r.ok ? r.json() : []; })
     .catch(function () { return []; })
     .then(function (items) {
-      var song = (items || []).filter(function (s) { return s.id === id; })[0];
+      items = items || [];
+      var idx = -1;
+      for (var i = 0; i < items.length; i++) { if (items[i].id === id) { idx = i; break; } }
+      var song = idx >= 0 ? items[idx] : null;
       if (!song) { fail("Couldn't find that song."); return; }
+
+      // Wrap-around prev/next through the list order.
+      if (items.length > 1) {
+        var prev = items[(idx - 1 + items.length) % items.length];
+        var next = items[(idx + 1) % items.length];
+        nextId = next.id;
+        var prevBtn = document.getElementById("prevBtn");
+        var nextBtn = document.getElementById("nextBtn");
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
+        prevBtn.onclick = function () { location.href = "song.html?id=" + encodeURIComponent(prev.id); };
+        nextBtn.onclick = function () { goToNext(); };
+      }
 
       YOUTUBE_ID = song.youtube || "";
       SONG = {
