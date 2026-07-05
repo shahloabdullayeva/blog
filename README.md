@@ -21,5 +21,3 @@ Markdown files plus JSON manifests that list them:
 
 Pages load their list from the matching manifest at runtime, so adding content
 just means dropping in a file and adding a line to the JSON.
-
-Hosted on GitHub Pages.
