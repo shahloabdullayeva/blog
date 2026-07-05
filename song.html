@@ -237,8 +237,22 @@
   function stopPolling() { if (pollId) { clearInterval(pollId); pollId = null; } }
 
   var nextId = "";
+  var prevId = "";
 
   function goToNext() { if (nextId) location.href = "song.html?id=" + encodeURIComponent(nextId); }
+  function goToPrev() { if (prevId) location.href = "song.html?id=" + encodeURIComponent(prevId); }
+  function togglePlay() {
+    if (!player || !player.getPlayerState) return;
+    if (player.getPlayerState() === 1) player.pauseVideo(); else player.playVideo();
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === "ArrowRight" || k === "j" || k === "J") { e.preventDefault(); goToNext(); }
+    else if (k === "ArrowLeft" || k === "k" || k === "K") { e.preventDefault(); goToPrev(); }
+    else if (k === " " || k === "Spacebar") { e.preventDefault(); togglePlay(); }
+  });
 
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player("ytHost", {
@@ -286,12 +300,15 @@
         var prev = items[(idx - 1 + items.length) % items.length];
         var next = items[(idx + 1) % items.length];
         nextId = next.id;
+        prevId = prev.id;
         var prevBtn = document.getElementById("prevBtn");
         var nextBtn = document.getElementById("nextBtn");
         prevBtn.disabled = false;
         nextBtn.disabled = false;
-        prevBtn.onclick = function () { location.href = "song.html?id=" + encodeURIComponent(prev.id); };
-        nextBtn.onclick = function () { goToNext(); };
+        prevBtn.title = "previous: " + prev.title + "  (←)";
+        nextBtn.title = "next: " + next.title + "  (→)";
+        prevBtn.onclick = goToPrev;
+        nextBtn.onclick = goToNext;
       }
 
       YOUTUBE_ID = song.youtube || "";
