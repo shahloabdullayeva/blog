@@ -1,5 +1,14 @@
 [
   {
+    "id": "labour",
+    "artist": "Paris Paloma",
+    "title": "Labour",
+    "album": "Cacophony",
+    "duration": 237,
+    "youtube": "jvU4xWsN7-A",
+    "date": "2026-07-05"
+  },
+  {
     "id": "fortnight",
     "artist": "Taylor Swift",
     "featuring": "Post Malone",
