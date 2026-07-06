@@ -62,11 +62,14 @@
   .video-frame iframe { width: 100%; height: 100%; border: 0; }
 
   .lyrics-col {
-    width: 38%; flex-shrink: 0; overflow-y: auto;
+    width: 38%; flex-shrink: 0; overflow: auto;
     padding: 20px 16px; background: var(--card);
     border: 1px solid var(--border); border-radius: 14px;
     height: 480px; scrollbar-width: thin;
+    resize: both; min-width: 220px; max-width: 70%; min-height: 220px;
   }
+  /* native resize grip, tinted to match the UI */
+  .lyrics-col::-webkit-resizer { background: var(--border-strong); }
   .lyrics-col .msg { color: var(--text-sub); font-size: 13px; text-align: center; margin-top: 40px; }
   .lines { display: flex; flex-direction: column; gap: 4px; }
   .lines button {
@@ -81,7 +84,7 @@
 
   @media (max-width: 760px) {
     .main { flex-direction: column; }
-    .lyrics-col { width: 100%; height: 340px; border-radius: 14px; padding: 18px; }
+    .lyrics-col { width: 100%; height: 340px; border-radius: 14px; padding: 18px; resize: vertical; max-width: none; }
     .lines button { text-align: center; font-size: 16px; padding: 9px 8px; }
   }
 </style>
@@ -136,6 +139,27 @@
   var pollId = null;
 
   var lyricsCol = document.getElementById("lyricsCol");
+
+  // Remember the reader-chosen lyrics panel size (desktop only; mobile is full-width).
+  var isDesktop = function () { return window.matchMedia("(min-width: 761px)").matches; };
+  function applySavedSize() {
+    if (!isDesktop()) { lyricsCol.style.width = ""; lyricsCol.style.height = ""; return; }
+    try {
+      var s = JSON.parse(localStorage.getItem("lyricsSize") || "null");
+      if (s && s.w) lyricsCol.style.width = s.w + "px";
+      if (s && s.h) lyricsCol.style.height = s.h + "px";
+    } catch (e) {}
+  }
+  applySavedSize();
+  if (window.ResizeObserver) {
+    new ResizeObserver(function () {
+      if (!isDesktop()) return;
+      localStorage.setItem("lyricsSize", JSON.stringify({
+        w: Math.round(lyricsCol.offsetWidth), h: Math.round(lyricsCol.offsetHeight)
+      }));
+    }).observe(lyricsCol);
+  }
+  window.addEventListener("resize", applySavedSize);
 
   function fmtOffset(o) { return (o >= 0 ? "+" : "") + o.toFixed(1) + "s"; }
   function setOffset(o) { offset = Math.round(o * 10) / 10; document.getElementById("offVal").textContent = fmtOffset(offset); }
