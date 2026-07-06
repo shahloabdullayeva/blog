@@ -100,6 +100,11 @@ async function loadPost() {
     });
     article.removeAttribute('aria-busy');
 
+    // Derive a description from the body (skip the heading) for search/social.
+    const firstPara = article.querySelector('p');
+    const desc = excerpt((firstPara ? firstPara.textContent : article.textContent) || '', 160);
+    const selfUrl = location.origin + location.pathname + location.search;
+
     if (indexRes.ok) {
       const items = await indexRes.json();
       if (items.length && items[0].date) {
@@ -107,7 +112,7 @@ async function loadPost() {
       }
       const idx = items.findIndex(p => p.slug === slug);
       const meta = idx !== -1 ? items[idx] : null;
-      if (meta) document.title = `${meta.title} — Charlotte`;
+      updatePostMeta(meta ? meta.title : '', desc, selfUrl);
 
       if (type === 'post' && idx !== -1) {
         const nav = document.getElementById('post-nav');
@@ -186,6 +191,47 @@ async function loadPoems() {
     list.innerHTML = `<li class="error">Couldn't load: ${escapeHtml(err.message)}</li>`;
     list.removeAttribute('aria-busy');
   }
+}
+
+function setMetaProp(selector, attr, value) {
+  let el = document.head.querySelector(selector);
+  if (!el) {
+    el = document.createElement('meta');
+    const [, key, name] = selector.match(/\[(\w+)="([^"]+)"\]/) || [];
+    if (key) el.setAttribute(key, name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', value);
+}
+
+function setCanonical(href) {
+  let el = document.head.querySelector('link[rel="canonical"]');
+  if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
+  el.href = href;
+}
+
+// Update per-page title/description/URL so crawlers that run JS index each post.
+function updatePostMeta(title, description, url) {
+  if (title) {
+    document.title = `${title} — Charlotte`;
+    setMetaProp('meta[property="og:title"]', 'property', `${title} — Charlotte`);
+    setMetaProp('meta[name="twitter:title"]', 'name', `${title} — Charlotte`);
+  }
+  if (description) {
+    setMetaProp('meta[name="description"]', 'name', description);
+    setMetaProp('meta[property="og:description"]', 'property', description);
+    setMetaProp('meta[name="twitter:description"]', 'name', description);
+  }
+  if (url) {
+    setCanonical(url);
+    setMetaProp('meta[property="og:url"]', 'property', url);
+  }
+}
+
+function excerpt(text, max) {
+  const clean = String(text).replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max - 1).replace(/\s+\S*$/, '') + '…';
 }
 
 function escapeHtml(s) {
