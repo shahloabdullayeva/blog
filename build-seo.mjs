@@ -69,14 +69,23 @@ function rfc822(iso) {
     `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())} +0000`;
 }
 
-// Minimal markdown -> HTML: strip the leading "# title", paragraph-wrap the rest.
+// Turn a possibly-relative asset path into an absolute URL for feed readers.
+const absUrl = (u) => /^https?:\/\//.test(u) ? u : `${SITE}/${u.replace(/^\//, '')}`;
+
+// Minimal markdown -> HTML: strip the leading "# title", paragraph-wrap the rest,
+// and turn standalone image lines (![alt](src)) into real <img> tags.
 function bodyHtml(md) {
   const lines = md.split('\n');
   if (lines[0] && lines[0].startsWith('# ')) lines.shift();
   const text = lines.join('\n').trim();
-  return text.split(/\n\s*\n/).map((para) =>
-    `<p>${xmlEsc(para.trim()).replace(/\n/g, '<br/>')}</p>`
-  ).join('\n');
+  return text.split(/\n\s*\n/).map((para) => {
+    const trimmed = para.trim();
+    const img = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (img) {
+      return `<p><img src="${xmlEsc(absUrl(img[2]))}" alt="${xmlEsc(img[1])}"/></p>`;
+    }
+    return `<p>${xmlEsc(trimmed).replace(/\n/g, '<br/>')}</p>`;
+  }).join('\n');
 }
 
 const sorted = posts.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));

@@ -156,6 +156,14 @@ a:hover { text-decoration: underline; }
 
 .post a { text-decoration: underline; text-underline-offset: 2px; }
 
+.post img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+}
+
 #music-search {
   font-family: var(--mono);
   font-size: 0.875rem;
