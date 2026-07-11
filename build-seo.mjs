@@ -107,6 +107,7 @@ for (const p of sorted.slice(0, 30)) {
 
 const lastBuild = sorted.length ? rfc822(sorted[0].date) : '';
 const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/feed.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Charlotte — diary</title>
