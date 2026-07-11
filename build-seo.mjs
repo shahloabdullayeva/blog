@@ -1,5 +1,5 @@
-// Generates sitemap.xml (all pages) and feed.xml (diary RSS) from the content
-// manifests. Run after adding/editing posts:  node build-seo.mjs
+// Generates sitemap.xml (all pages) from the content manifests.
+// Run after adding/editing posts:  node build-seo.mjs
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -58,68 +58,4 @@ ${urls.map(({ loc, lastmod }) =>
 `;
 await writeFile(join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
 
-// ---- feed.xml (diary RSS 2.0) ---------------------------------------------
-const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const MO = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-function rfc822(iso) {
-  const d = new Date(iso);
-  if (isNaN(d)) return '';
-  const p = (n) => String(n).padStart(2, '0');
-  return `${WD[d.getUTCDay()]}, ${p(d.getUTCDate())} ${MO[d.getUTCMonth()]} ${d.getUTCFullYear()} ` +
-    `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())} +0000`;
-}
-
-// Turn a possibly-relative asset path into an absolute URL for feed readers.
-const absUrl = (u) => /^https?:\/\//.test(u) ? u : `${SITE}/${u.replace(/^\//, '')}`;
-
-// Minimal markdown -> HTML: strip the leading "# title", paragraph-wrap the rest,
-// and turn standalone image lines (![alt](src)) into real <img> tags.
-function bodyHtml(md) {
-  const lines = md.split('\n');
-  if (lines[0] && lines[0].startsWith('# ')) lines.shift();
-  const text = lines.join('\n').trim();
-  return text.split(/\n\s*\n/).map((para) => {
-    const trimmed = para.trim();
-    const img = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
-    if (img) {
-      return `<p><img src="${xmlEsc(absUrl(img[2]))}" alt="${xmlEsc(img[1])}"/></p>`;
-    }
-    return `<p>${xmlEsc(trimmed).replace(/\n/g, '<br/>')}</p>`;
-  }).join('\n');
-}
-
-const sorted = posts.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-const items = [];
-for (const p of sorted.slice(0, 30)) {
-  let html = '';
-  try { html = bodyHtml(await readFile(join(ROOT, `posts/${p.slug}.md`), 'utf8')); }
-  catch { html = ''; }
-  const link = `${SITE}/post.html?slug=${encodeURIComponent(p.slug)}`;
-  items.push(
-`    <item>
-      <title>${xmlEsc(p.title)}</title>
-      <link>${xmlEsc(link)}</link>
-      <guid isPermaLink="true">${xmlEsc(link)}</guid>
-      <pubDate>${rfc822(p.date)}</pubDate>
-      <description><![CDATA[${html}]]></description>
-    </item>`);
-}
-
-const lastBuild = sorted.length ? rfc822(sorted[0].date) : '';
-const feed = `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/feed.xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Charlotte — diary</title>
-    <link>${SITE}/diary.html</link>
-    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Diary entries by Charlotte.</description>
-    <language>en</language>
-    ${lastBuild ? `<lastBuildDate>${lastBuild}</lastBuildDate>` : ''}
-${items.join('\n')}
-  </channel>
-</rss>
-`;
-await writeFile(join(ROOT, 'feed.xml'), feed, 'utf8');
-
-console.log(`Wrote sitemap.xml (${urls.length} urls) and feed.xml (${items.length} items).`);
+console.log(`Wrote sitemap.xml (${urls.length} urls).`);
