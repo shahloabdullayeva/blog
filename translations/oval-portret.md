@@ -1,7 +1,6 @@
 # Oval Portret
 
 *Edgar Allan Poe*
-*Ingliz tilidan tarjima*
 
 ---
 
