@@ -245,36 +245,3 @@ function formatDate(iso) {
   if (isNaN(d)) return iso;
   return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
 }
-
-(function () {
-  const GC_CODE = 'charlotte';
-  const OWNER_KEY = 'owner';
-  const live = GC_CODE !== 'CHANGE-ME';
-
-  if (new URLSearchParams(location.search).get('owner') === OWNER_KEY) {
-    localStorage.setItem('owner', '1');
-  }
-  const isOwner = localStorage.getItem('owner') === '1';
-
-  if (live && !isOwner) {
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = '//gc.zgo.at/count.js';
-    s.setAttribute('data-goatcounter', `https://${GC_CODE}.goatcounter.com/count`);
-    document.body.appendChild(s);
-  }
-
-  if (live && isOwner) {
-    const header = document.querySelector('.site-header');
-    if (header) {
-      const a = document.createElement('a');
-      a.href = `https://${GC_CODE}.goatcounter.com`;
-      a.textContent = ' ·';
-      a.title = 'stats';
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = 'owner-stats';
-      header.appendChild(a);
-    }
-  }
-})();
