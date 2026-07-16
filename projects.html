@@ -35,18 +35,68 @@
   <main>
     <ul class="tree">
       <li><a href="./">← back</a></li>
-      <li>projects
-        <ul>
-          <li><a href="https://londonielts.uz" target="_blank" rel="noopener">london lc</a>
-            <p>an IELTS preparation platform where students take full mock tests across all four skills. reading tests include all standard question types with auto-scoring. listening has timed audio sections with transcripts and band scores. writing covers task 1 and task 2 with AI-assisted feedback. speaking provides cue cards and prompts for all three parts. the platform includes progress tracking with saved attempts and band history, a vocabulary section, a music player for lyrics-based listening practice, and an admin dashboard for managing students, tests, and content. supports multiple themes — dark, light, dusk, and custom palettes. built with next.js 16 (app router), react 19, typescript, tailwind css v4, framer motion, and supabase for auth and database. deployed to github pages via github actions on a custom domain. development done through claude code.</p>
-          </li>
-          <li>ai assistant
-            <p>a telegram bot that responds to messages when the owner is unavailable. built with python and telethon for the telegram client, and the anthropic API with claude opus as the language model. on first contact the bot introduces itself as an AI assistant, then responds naturally using the last eight messages of chat history for context. has a four-hour greeting cooldown to avoid re-introducing in ongoing conversations. detects language and replies in formal uzbek for uzbek messages, english by default. supports private messages and group mentions. controlled through commands — /on, /off, /block, /unblock, /notes, /info. runs on fedora linux as a systemd service with selinux configured, auto-restart on failure, and boot-on-startup. no terminal needed.</p>
-          </li>
-          <li><a href="https://github.com/shahloabdullayeva/pfp-swap" target="_blank" rel="noopener">pfp-swap</a>
-            <p>an automation that rotates a telegram profile picture on a schedule. built with python and telethon, picks from a set of photos and updates the profile pic automatically. runs entirely through github actions on a cron job — no server needed, just a scheduled workflow that triggers the script. covers CI/CD pipelines, github actions workflows, cron scheduling, and secret management.</p>
-          </li>
-        </ul>
+      <li>projects</li>
+    </ul>
+
+    <ul class="projects">
+      <li class="project">
+        <h2 class="project-name"><a href="https://londonielts.uz" target="_blank" rel="noopener">london lc</a></h2>
+        <p class="project-desc">a website for IELTS practice. students take full mock tests in reading, listening, writing, and speaking, and get scored right away. it also tracks their progress over time, and has a vocabulary section and a music player for listening practice.</p>
+        <div class="project-meta">
+          <div class="project-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+          </div>
+          <div class="project-links">
+            <a href="https://londonielts.uz" target="_blank" rel="noopener">live site</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="project">
+        <h2 class="project-name"><a href="https://github.com/shahloabdullayeva/shahlo-bot" target="_blank" rel="noopener">ai assistant</a></h2>
+        <p class="project-desc">a telegram bot that answers messages for me when i'm away. it replies naturally using recent chat history, and understands both uzbek and english. i turn it on and off with simple commands, and it runs quietly in the background on my linux machine.</p>
+        <div class="project-meta">
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Telethon</span>
+            <span class="tag">Claude API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/shahloabdullayeva/shahlo-bot" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="project">
+        <h2 class="project-name"><a href="https://github.com/shahloabdullayeva/pfp-swap" target="_blank" rel="noopener">pfp-swap</a></h2>
+        <p class="project-desc">changes my telegram profile picture on a schedule. it picks from a set of photos and swaps them automatically. there's no server — it just runs on its own using a github actions timer.</p>
+        <div class="project-meta">
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/shahloabdullayeva/pfp-swap" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="project">
+        <h2 class="project-name"><a href="https://github.com/shahloabdullayeva/uzbek-l10n" target="_blank" rel="noopener">uzbek-l10n</a></h2>
+        <p class="project-desc">my uzbek translation work for free software. i translate desktop apps like GNOME and MATE into uzbek and keep all the files together here.</p>
+        <div class="project-meta">
+          <div class="project-tags">
+            <span class="tag">Uzbek</span>
+            <span class="tag">Weblate</span>
+            <span class="tag">gettext</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/shahloabdullayeva/uzbek-l10n" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
       </li>
     </ul>
   </main>
