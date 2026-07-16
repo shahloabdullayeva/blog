@@ -271,3 +271,76 @@ a:hover { text-decoration: underline; }
 
 .post-nav-prev { margin-inline-end: auto; }
 .post-nav-next { margin-inline-start: auto; text-align: end; }
+
+.projects {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.project {
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.project:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.project-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+  color: var(--fg);
+}
+
+.project-name a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.project-name a:hover { color: var(--accent); }
+
+.project-desc {
+  margin: 0 0 0.7rem;
+  color: var(--fg);
+  line-height: 1.7;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-inline-start: auto;
+  font-size: 0.8125rem;
+}
+
+.project-links a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
