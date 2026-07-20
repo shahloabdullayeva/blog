@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base href="/">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>music · synced</title>
@@ -275,8 +276,8 @@
   var nextId = "";
   var prevId = "";
 
-  function goToNext() { if (nextId) location.href = "song.html?id=" + encodeURIComponent(nextId); }
-  function goToPrev() { if (prevId) location.href = "song.html?id=" + encodeURIComponent(prevId); }
+  function goToNext() { if (nextId) location.href = "/song/" + encodeURIComponent(nextId); }
+  function goToPrev() { if (prevId) location.href = "/song/" + encodeURIComponent(prevId); }
   function togglePlay() {
     if (!player || !player.getPlayerState) return;
     if (player.getPlayerState() === 1) player.pauseVideo(); else player.playVideo();
@@ -317,9 +318,12 @@
     showMsg(text);
   }
 
-  // Resolve which song to play from ?id= against the manifest.
-  var id = new URLSearchParams(location.search).get("id") || "";
+  // Resolve which song to play from the /song/<id> path (or the older ?id= query) against
+  // the manifest.
+  var pathMatch = location.pathname.match(/^\/song\/([a-z0-9-]+)\/?$/i);
+  var id = pathMatch ? pathMatch[1] : (new URLSearchParams(location.search).get("id") || "");
   if (!/^[a-z0-9-]+$/i.test(id)) { fail("No song specified."); return; }
+  if (!pathMatch) history.replaceState(null, "", "/song/" + encodeURIComponent(id));
 
   fetch("music/index.json")
     .then(function (r) { return r.ok ? r.json() : []; })

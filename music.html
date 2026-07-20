@@ -71,7 +71,7 @@
         }
         list.innerHTML = items.map(function (s) {
           var by = s.artist ? ' <span class="dim">— ' + escapeHtml(s.artist) + '</span>' : '';
-          return '<li><a href="song.html?id=' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
+          return '<li><a href="/song/' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
         }).join('');
       }
 

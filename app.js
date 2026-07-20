@@ -1,6 +1,6 @@
 const path = location.pathname;
-const isPostPage = path.endsWith('post.html');
-const isPoemsPage = path.endsWith('poems.html');
+const isPostPage = path.endsWith('post.html') || !!parsePrettyPost(path);
+const isPoemsPage = path.endsWith('poems.html') || /^\/poems\/[a-z]+\/?$/i.test(path);
 
 if (isPostPage) {
   loadPost();
@@ -17,6 +17,25 @@ if (isPostPage) {
   });
 }
 
+// Clean, GitHub-style permalinks (/posts/<slug>, /poems/<lang>/<slug>, /translations/<slug>)
+// are served by a Caddy rewrite that points them at post.html without changing the address
+// bar; this recovers the slug/type/lang from the visible path instead of a query string.
+function parsePrettyPost(pathname) {
+  let m = pathname.match(/^\/posts\/([a-z0-9-]+)\/?$/i);
+  if (m) return { type: 'post', slug: m[1] };
+  m = pathname.match(/^\/poems\/([a-z]+)\/([a-z0-9-]+)\/?$/i);
+  if (m) return { type: 'poem', lang: m[1].toLowerCase(), slug: m[2] };
+  m = pathname.match(/^\/translations\/([a-z0-9-]+)\/?$/i);
+  if (m) return { type: 'translation', slug: m[1] };
+  return null;
+}
+
+function postHref(type, slug, lang) {
+  if (type === 'poem') return `/poems/${encodeURIComponent(lang)}/${encodeURIComponent(slug)}`;
+  if (type === 'translation') return `/translations/${encodeURIComponent(slug)}`;
+  return `/posts/${encodeURIComponent(slug)}`;
+}
+
 async function loadList(list, manifestUrl, options = {}) {
   try {
     const res = await fetch(manifestUrl);
@@ -26,8 +45,6 @@ async function loadList(list, manifestUrl, options = {}) {
   b.date.localeCompare(a.date));
 
     const visible = items.slice(0, options.limit || Infinity);
-    const typeParam = options.type ? `&type=${encodeURIComponent(options.type)}` : '';
-    const langParam = options.lang ? `&lang=${encodeURIComponent(options.lang)}` : '';
 
     let html = '';
     if (visible.length === 0) {
@@ -35,7 +52,8 @@ async function loadList(list, manifestUrl, options = {}) {
     } else {
       html += visible.map(item => {
         const author = item.author ? ` <span class="dim">— ${escapeHtml(item.author)}</span>` : '';
-        return `<li><a href="post.html?slug=${encodeURIComponent(item.slug)}${typeParam}${langParam}">${escapeHtml(item.title)}</a>${author}</li>`;
+        const href = postHref(options.type || 'post', item.slug, options.lang);
+        return `<li><a href="${href}">${escapeHtml(item.title)}</a>${author}</li>`;
       }).join('');
     }
 
@@ -52,21 +70,28 @@ async function loadList(list, manifestUrl, options = {}) {
 
 async function loadPost() {
   const article = document.getElementById('post');
+  const pretty = parsePrettyPost(location.pathname);
   const params = new URLSearchParams(location.search);
-  const slug = params.get('slug') || '';
-  const type = params.get('type') || 'post';
-  const lang = (params.get('lang') || '').toLowerCase();
+  const slug = pretty ? pretty.slug : (params.get('slug') || '');
+  const type = pretty ? pretty.type : (params.get('type') || 'post');
+  const lang = (pretty ? (pretty.lang || '') : (params.get('lang') || '')).toLowerCase();
+
+  // Old ?slug=&type=&lang= links still resolve (Caddy keeps serving this file at
+  // /post.html), so quietly upgrade the address bar to the clean permalink.
+  if (slug && !pretty) {
+    history.replaceState(null, '', postHref(type, slug, lang));
+  }
 
   let folder, backHref;
   if (type === 'poem') {
     folder = `poems/${lang}`;
-    backHref = `poems.html?lang=${encodeURIComponent(lang)}`;
+    backHref = `/poems/${encodeURIComponent(lang)}`;
   } else if (type === 'translation') {
     folder = 'translations';
-    backHref = 'translations.html';
+    backHref = '/translations.html';
   } else {
     folder = 'posts';
-    backHref = 'diary.html';
+    backHref = '/diary.html';
   }
 
   const backLink = document.getElementById('post-back');
@@ -103,7 +128,7 @@ async function loadPost() {
     // Derive a description from the body (skip the heading) for search/social.
     const firstPara = article.querySelector('p');
     const desc = excerpt((firstPara ? firstPara.textContent : article.textContent) || '', 160);
-    const selfUrl = location.origin + location.pathname + location.search;
+    const selfUrl = location.origin + postHref(type, slug, lang);
 
     if (indexRes.ok) {
       const items = await indexRes.json();
@@ -122,13 +147,13 @@ async function loadPost() {
           const prevEl = document.getElementById('post-prev');
           const nextEl = document.getElementById('post-next');
           if (prev) {
-            prevEl.href = `post.html?slug=${encodeURIComponent(prev.slug)}`;
+            prevEl.href = postHref('post', prev.slug);
             prevEl.textContent = `← ${prev.title}`;
           } else {
             prevEl.hidden = true;
           }
           if (next) {
-            nextEl.href = `post.html?slug=${encodeURIComponent(next.slug)}`;
+            nextEl.href = postHref('post', next.slug);
             nextEl.textContent = `${next.title} →`;
           } else {
             nextEl.hidden = true;
@@ -147,14 +172,16 @@ async function loadPoems() {
   const list = document.getElementById('poem-list');
   const heading = document.getElementById('poem-heading');
   const back = document.getElementById('poem-back');
+  const pathMatch = location.pathname.match(/^\/poems\/([a-z]+)\/?$/i);
   const params = new URLSearchParams(location.search);
-  const lang = (params.get('lang') || '').toLowerCase();
+  const lang = (pathMatch ? pathMatch[1] : (params.get('lang') || '')).toLowerCase();
 
   try {
     if (lang) {
       if (!/^[a-z]+$/.test(lang)) throw new Error('Unknown language');
+      if (!pathMatch) history.replaceState(null, '', `/poems/${encodeURIComponent(lang)}`);
       if (heading) heading.textContent = lang;
-      if (back) back.href = 'poems.html';
+      if (back) back.href = '/poems.html';
       document.title = `${lang} poems — Charlotte`;
 
       const res = await fetch(`poems/${lang}/index.json`);
@@ -170,20 +197,20 @@ async function loadPoems() {
         list.innerHTML = '<li class="dim">(nothing yet)</li>';
       } else {
         list.innerHTML = items.map(item => {
-          const href = `post.html?slug=${encodeURIComponent(item.slug)}&type=poem&lang=${encodeURIComponent(lang)}`;
+          const href = postHref('poem', item.slug, lang);
           const author = item.author ? ` <span class="dim">— ${escapeHtml(item.author)}</span>` : '';
           return `<li><a href="${href}">${escapeHtml(item.title)}</a>${author}</li>`;
         }).join('');
       }
     } else {
-      if (back) back.href = './';
+      if (back) back.href = '/';
       const res = await fetch('poems/index.json');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const langs = await res.json();
       list.innerHTML = langs.length === 0
         ? '<li class="dim">(nothing yet)</li>'
         : langs.map(l =>
-            `<li><a href="poems.html?lang=${encodeURIComponent(l)}">${escapeHtml(l)}</a></li>`
+            `<li><a href="/poems/${encodeURIComponent(l)}">${escapeHtml(l)}</a></li>`
           ).join('');
     }
     list.removeAttribute('aria-busy');

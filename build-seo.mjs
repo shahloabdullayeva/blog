@@ -26,26 +26,26 @@ STATIC.forEach((p) => push(SITE + p));
 
 const posts = (await readJson('posts/index.json')) || [];
 for (const p of posts) {
-  push(`${SITE}/post.html?slug=${encodeURIComponent(p.slug)}`, (p.date || '').slice(0, 10));
+  push(`${SITE}/posts/${encodeURIComponent(p.slug)}`, (p.date || '').slice(0, 10));
 }
 
 const langs = (await readJson('poems/index.json')) || [];
 for (const lang of langs) {
-  push(`${SITE}/poems.html?lang=${encodeURIComponent(lang)}`);
+  push(`${SITE}/poems/${encodeURIComponent(lang)}`);
   const list = (await readJson(`poems/${lang}/index.json`)) || [];
   for (const item of list) {
-    push(`${SITE}/post.html?slug=${encodeURIComponent(item.slug)}&type=poem&lang=${encodeURIComponent(lang)}`);
+    push(`${SITE}/poems/${encodeURIComponent(lang)}/${encodeURIComponent(item.slug)}`);
   }
 }
 
 const translations = (await readJson('translations/index.json')) || [];
 for (const t of translations) {
-  push(`${SITE}/post.html?slug=${encodeURIComponent(t.slug)}&type=translation`);
+  push(`${SITE}/translations/${encodeURIComponent(t.slug)}`);
 }
 
 const songs = (await readJson('music/index.json')) || [];
 for (const s of songs) {
-  push(`${SITE}/song.html?id=${encodeURIComponent(s.id)}`);
+  push(`${SITE}/song/${encodeURIComponent(s.id)}`);
 }
 
 // ---- sitemap.xml -----------------------------------------------------------
