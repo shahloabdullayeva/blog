@@ -27,12 +27,15 @@ function parsePrettyPost(pathname) {
   if (m) return { type: 'poem', lang: m[1].toLowerCase(), slug: m[2] };
   m = pathname.match(/^\/translations\/([a-z0-9-]+)\/?$/i);
   if (m) return { type: 'translation', slug: m[1] };
+  m = pathname.match(/^\/prose\/([a-z0-9-]+)\/?$/i);
+  if (m) return { type: 'prose', slug: m[1] };
   return null;
 }
 
 function postHref(type, slug, lang) {
   if (type === 'poem') return `/poems/${encodeURIComponent(lang)}/${encodeURIComponent(slug)}`;
   if (type === 'translation') return `/translations/${encodeURIComponent(slug)}`;
+  if (type === 'prose') return `/prose/${encodeURIComponent(slug)}`;
   return `/posts/${encodeURIComponent(slug)}`;
 }
 
@@ -89,6 +92,9 @@ async function loadPost() {
   } else if (type === 'translation') {
     folder = 'translations';
     backHref = '/translations.html';
+  } else if (type === 'prose') {
+    folder = 'prose';
+    backHref = '/library.html';
   } else {
     folder = 'posts';
     backHref = '/diary.html';

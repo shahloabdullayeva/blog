@@ -43,6 +43,11 @@ for (const t of translations) {
   push(`${SITE}/translations/${encodeURIComponent(t.slug)}`);
 }
 
+const prose = (await readJson('prose/index.json')) || [];
+for (const p of prose) {
+  push(`${SITE}/prose/${encodeURIComponent(p.slug)}`);
+}
+
 const songs = (await readJson('music/index.json')) || [];
 for (const s of songs) {
   push(`${SITE}/song/${encodeURIComponent(s.id)}`);
