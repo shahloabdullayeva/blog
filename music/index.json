@@ -1,5 +1,14 @@
 [
   {
+    "id": "kozlarimning-oqi",
+    "artist": "Ohista Jamshid & DalaHast",
+    "title": "Ko'zlarimning oqi",
+    "duration": 358,
+    "youtube": "BsE6cbCSBTE",
+    "date": "2020-07-17",
+    "pinned": true
+  },
+  {
     "id": "labour",
     "artist": "Paris Paloma",
     "title": "Labour",
@@ -16,7 +25,8 @@
     "album": "THE TORTURED POETS DEPARTMENT",
     "duration": 228,
     "youtube": "b7kmP1fsGg8",
-    "date": "2026-06-17"
+    "date": "2026-06-17",
+    "pinned": true
   },
   {
     "id": "eyes-without-a-face",
@@ -1548,7 +1558,8 @@
     "album": "Favourite Worst Nightmare",
     "duration": 254,
     "youtube": "jlyG-PFgueM",
-    "date": "2007-04-23"
+    "date": "2007-04-23",
+    "pinned": true
   },
   {
     "id": "raindance",
