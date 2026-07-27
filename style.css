@@ -90,6 +90,9 @@ a:hover { text-decoration: underline; }
 
 .tree a:hover { color: var(--fg); }
 
+.tree a.dim { color: var(--fg-muted); }
+.tree a.dim:hover { color: var(--fg); }
+
 .tree li.dim,
 .tree li.loading,
 .tree li.error { color: var(--fg-muted); }

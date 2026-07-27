@@ -56,7 +56,8 @@ async function loadList(list, manifestUrl, options = {}) {
       html += visible.map(item => {
         const author = item.author ? ` <span class="dim">— ${escapeHtml(item.author)}</span>` : '';
         const href = postHref(options.type || 'post', item.slug, options.lang);
-        return `<li><a href="${href}">${escapeHtml(item.title)}</a>${author}</li>`;
+        const cls = item.dim ? ' class="dim"' : '';
+        return `<li><a${cls} href="${href}">${escapeHtml(item.title)}</a>${author}</li>`;
       }).join('');
     }
 
