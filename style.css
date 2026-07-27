@@ -90,8 +90,8 @@ a:hover { text-decoration: underline; }
 
 .tree a:hover { color: var(--fg); }
 
-.tree a.dim { color: var(--fg-muted); }
-.tree a.dim:hover { color: var(--fg); }
+.tree a.dim,
+.tree a.dim:hover { color: var(--fg-muted); }
 
 .tree li.dim,
 .tree li.loading,
