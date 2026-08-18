@@ -1,5 +1,3 @@
-# Untitled
-
 *Odinaxon Mavlonxonova · 2026*
 
 Hayotda ikkita voqea hech qachon esimdan chiqmaydi. Esim o‘zimdan chiqib ketsa ham, bular chiqmaydi. Ulardan birini aytib bermoqchiman.
