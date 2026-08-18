@@ -18,10 +18,14 @@ SERVER=root@89.39.94.118
 CLONE=/root/blog/blog
 DOCROOT=/srv/blog
 
+# The excludes keep dev-only tooling out of the public docroot — otherwise
+# deploy.sh, build-seo.mjs and the README are downloadable from the live site
+# and leak the server address and build setup.
 ssh "$SERVER" "
   set -e
   git -C '$CLONE' pull --ff-only
-  rsync -a --exclude='.git' '$CLONE'/ '$DOCROOT'/
+  rsync -a --exclude='.git' --exclude='deploy.sh' --exclude='build-seo.mjs' \
+    --exclude='README.md' --exclude='.gitignore' '$CLONE'/ '$DOCROOT'/
 "
 
 echo "deployed → https://shahlo.blog"
