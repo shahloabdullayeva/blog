@@ -80,6 +80,8 @@ a:hover { text-decoration: underline; }
 
 .tree li { margin: 0; }
 
+.tree li.genre { margin-top: 0.75rem; }
+
 .tree li::marker { color: var(--fg-muted); }
 
 .tree a {

@@ -137,7 +137,7 @@
   "use strict";
 
   var YOUTUBE_ID = "";
-  var SONG = { artist: "", title: "", album: "", duration: 0 };
+  var SONG = { artist: "", title: "", album: "", duration: 0, lrclib: 0, instrumental: false };
   var BAKED_LRC = "";
 
   // Lyric timing correction in seconds. Negative = lyrics show later.
@@ -198,6 +198,7 @@
 
   function loadLyrics() {
     if (BAKED_LRC && BAKED_LRC.trim()) { lines = parseLRC(BAKED_LRC); renderSynced(); return; }
+    if (SONG.instrumental) { showMsg("Instrumental — no lyrics, just listen."); return; }
     var base = "https://lrclib.net/api/";
     var getUrl = base + "get?artist_name=" + encodeURIComponent(SONG.artist) +
       "&track_name=" + encodeURIComponent(SONG.title) +
@@ -206,7 +207,7 @@
     var searchUrl = base + "search?artist_name=" + encodeURIComponent(SONG.artist) +
       "&track_name=" + encodeURIComponent(SONG.title);
 
-    fetch(getUrl)
+    fetch(SONG.lrclib ? base + "get/" + SONG.lrclib : getUrl)
       .then(function (r) { return r.ok ? r.json() : null; })
       .catch(function () { return null; })
       .then(function (data) {
@@ -356,7 +357,9 @@
         artist: song.artist || "",
         title: song.title || "",
         album: song.album || "",
-        duration: song.duration || 0
+        duration: song.duration || 0,
+        lrclib: song.lrclib || 0,
+        instrumental: !!song.instrumental
       };
 
       var feat = song.featuring ? " ft. " + song.featuring : "";

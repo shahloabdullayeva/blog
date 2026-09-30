@@ -36,7 +36,7 @@
     <ul class="tree">
       <li><a href="./">← back</a></li>
       <li>music
-        <input id="music-search" type="search" placeholder="filter by title or artist…" autocomplete="off" aria-label="Filter songs" />
+        <input id="music-search" type="search" placeholder="filter by title, artist or genre…" autocomplete="off" aria-label="Filter songs" />
         <ul id="music-list" aria-busy="true">
           <li class="loading">Loading…</li>
         </ul>
@@ -46,6 +46,8 @@
 
   <script>
     (function () {
+      var GENRES = ["pop", "rock", "metal & nu metal", "alternative & indie", "80s & 90s", "hip-hop & r&b",
+        "electronic & dance", "jazz, soul & oldies", "classical", "piano & film scores", "uzbek & world"];
       function escapeHtml(s) {
         return String(s).replace(/[&<>"']/g, function (c) {
           return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -55,21 +57,14 @@
       var search = document.getElementById('music-search');
       var songs = [];
 
-      // Fisher–Yates shuffle — reshuffles on every page load
-      function shuffle(a) {
-        for (var i = a.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var t = a[i]; a[i] = a[j]; a[j] = t;
-        }
-        return a;
+      function songItem(s) {
+        var by = s.artist ? ' <span class="dim">— ' + escapeHtml(s.artist) + '</span>' : '';
+        return '<li><a href="/song/' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
       }
 
-      // Songs marked "pinned" in the manifest always occupy the top slots
-      // (shuffled among themselves); everything else shuffles below them.
-      function order(items) {
-        var pinned = items.filter(function (s) { return s.pinned; });
-        var rest = items.filter(function (s) { return !s.pinned; });
-        return shuffle(pinned).concat(shuffle(rest));
+      function group(name, items) {
+        return '<li class="genre">' + escapeHtml(name) + ' <span class="dim">(' + items.length + ')</span><ul>' +
+          items.map(songItem).join('') + '</ul></li>';
       }
 
       function render(items) {
@@ -77,17 +72,22 @@
           list.innerHTML = '<li class="dim">(no matches)</li>';
           return;
         }
-        list.innerHTML = items.map(function (s) {
-          var by = s.artist ? ' <span class="dim">— ' + escapeHtml(s.artist) + '</span>' : '';
-          return '<li><a href="/song/' + encodeURIComponent(s.id) + '">' + escapeHtml(s.title) + '</a>' + by + '</li>';
-        }).join('');
+        var pinned = items.filter(function (s) { return s.pinned; });
+        var html = pinned.length ? group('pinned', pinned) : '';
+        var names = GENRES.slice();
+        items.forEach(function (s) { if (s.genre && names.indexOf(s.genre) === -1) names.push(s.genre); });
+        names.forEach(function (name) {
+          var inGenre = items.filter(function (s) { return !s.pinned && (s.genre || 'pop') === name; });
+          if (inGenre.length) html += group(name, inGenre);
+        });
+        list.innerHTML = html;
       }
 
       function applyFilter() {
         var q = search.value.trim().toLowerCase();
         if (!q) { render(songs); return; }
         render(songs.filter(function (s) {
-          return (s.title + ' ' + (s.artist || '')).toLowerCase().indexOf(q) !== -1;
+          return (s.title + ' ' + (s.artist || '') + ' ' + (s.genre || '')).toLowerCase().indexOf(q) !== -1;
         }));
       }
 
@@ -96,7 +96,7 @@
       fetch('music/index.json')
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (items) {
-          songs = order(items.slice());
+          songs = items.slice();
           if (!items.length) {
             list.innerHTML = '<li class="dim">(nothing yet)</li>';
           } else {
