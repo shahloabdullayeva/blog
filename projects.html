@@ -41,7 +41,7 @@
     <ul class="projects">
       <li class="project">
         <h2 class="project-name"><a href="https://kaido.shahlo.blog" target="_blank" rel="noopener">kaido</a></h2>
-        <p class="project-desc">a maintenance platform for a trucking company that runs its own trucks and also manages trucks for other carriers. it's meant to be the one place every repair gets logged, for any truck and any driver. work orders cover about 80 kinds of work across 13 systems, from oil and tires to brakes, transmission, DPF and DEF, electrical, cab and trailer. it tracks when each service is due by miles or by date: PM-A, PM-B and PM-C, air dryer, transmission and differential fluid, coolant and DPF cleaning. each company sets its own intervals, and severe-duty trucks come due sooner. it pulls odometer, GPS and fault codes from Samsara, shows the whole fleet on a map, finds nearby shops, and sends a daily telegram follow-up with whatever is overdue or coming up. Claude explains fault codes in plain words and answers questions about any truck.</p>
+        <p class="project-desc">a maintenance platform for a trucking company that runs its own trucks and also manages trucks for other carriers. it's meant to be the one place every repair gets logged, for any truck and any driver. work orders cover 81 kinds of work across 13 systems, from oil and tires to brakes, transmission, DPF and DEF, electrical, cab and trailer. it tracks when each service is due by miles or by date (oil, DOT annual, PM-A, PM-B and PM-C, air dryer, transmission and differential fluid, coolant and DPF cleaning), and each company sets its own intervals. it pulls odometer, GPS and fault codes from Samsara every 15 minutes and shows the whole fleet on a map. when a truck needs a shop, it finds nearby truck shops with their address, a call button and a google maps link, while a progress bar shows how far along the search is. Claude picks the shop, explains fault codes in plain words, suggests the right oil from the VIN and answers questions about any truck. every morning it sends a telegram follow-up with whatever is overdue or coming up, and reports download as PDF, Excel or CSV.</p>
         <div class="project-meta">
           <div class="project-tags">
             <span class="tag">Python</span>
@@ -50,6 +50,7 @@
             <span class="tag">Samsara API</span>
             <span class="tag">Claude API</span>
             <span class="tag">OpenStreetMap</span>
+            <span class="tag">Telegram</span>
           </div>
           <div class="project-links">
             <a href="https://kaido.shahlo.blog" target="_blank" rel="noopener">live site</a>
