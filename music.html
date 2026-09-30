@@ -72,12 +72,11 @@
           list.innerHTML = '<li class="dim">(no matches)</li>';
           return;
         }
-        var pinned = items.filter(function (s) { return s.pinned; });
-        var html = pinned.length ? group('pinned', pinned) : '';
+        var html = '';
         var names = GENRES.slice();
         items.forEach(function (s) { if (s.genre && names.indexOf(s.genre) === -1) names.push(s.genre); });
         names.forEach(function (name) {
-          var inGenre = items.filter(function (s) { return !s.pinned && (s.genre || 'pop') === name; });
+          var inGenre = items.filter(function (s) { return (s.genre || 'pop') === name; });
           if (inGenre.length) html += group(name, inGenre);
         });
         list.innerHTML = html;
