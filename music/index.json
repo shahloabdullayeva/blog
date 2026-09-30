@@ -22,16 +22,6 @@
     "lrclib": 36962762
   },
   {
-    "id": "eyes-without-a-face",
-    "artist": "Billy Idol",
-    "title": "Eyes Without a Face",
-    "album": "Rebel Yell",
-    "duration": 299,
-    "youtube": "9OFpfTd0EIs",
-    "date": "1984-06-06",
-    "genre": "rock"
-  },
-  {
     "id": "livin-on-a-prayer",
     "artist": "Bon Jovi",
     "title": "Livin' on a Prayer",
@@ -43,26 +33,6 @@
     "lrclib": 36962040
   },
   {
-    "id": "im-still-standing",
-    "artist": "Elton John",
-    "title": "I'm Still Standing",
-    "album": "Too Low for Zero",
-    "duration": 182,
-    "youtube": "ZHwVBirqD2s",
-    "date": "1983-07-22",
-    "genre": "rock"
-  },
-  {
-    "id": "centuries",
-    "artist": "Fall Out Boy",
-    "title": "Centuries",
-    "album": "American Beauty/American Psycho",
-    "duration": 228,
-    "youtube": "LBr7kECsjcQ",
-    "date": "2014-09-09",
-    "genre": "rock"
-  },
-  {
     "id": "everlong",
     "artist": "Foo Fighters",
     "title": "Everlong",
@@ -72,16 +42,6 @@
     "date": "1997-08-18",
     "genre": "rock",
     "lrclib": 34715024
-  },
-  {
-    "id": "iris",
-    "artist": "Goo Goo Dolls",
-    "title": "Iris",
-    "album": "City of Angels",
-    "duration": 290,
-    "youtube": "NdYWuo9OFAw",
-    "date": "1998-04-01",
-    "genre": "rock"
   },
   {
     "id": "sweet-child-o-mine",
@@ -138,17 +98,6 @@
     "lrclib": 34501810
   },
   {
-    "id": "wonderwall",
-    "artist": "Oasis",
-    "title": "Wonderwall",
-    "album": "(What's the Story) Morning Glory?",
-    "duration": 279,
-    "youtube": "6hzrDeceEKc",
-    "date": "1995-10-30",
-    "genre": "rock",
-    "lrclib": 36939761
-  },
-  {
     "id": "wish-you-were-here",
     "artist": "Pink Floyd",
     "title": "Wish You Were Here",
@@ -158,26 +107,6 @@
     "date": "1975-09-12",
     "genre": "rock",
     "lrclib": 28817563
-  },
-  {
-    "id": "where-is-my-mind",
-    "artist": "Pixies",
-    "title": "Where Is My Mind?",
-    "album": "Surfer Rosa",
-    "duration": 233,
-    "youtube": "OJ62RzJkYUo",
-    "date": "1988-03-21",
-    "genre": "rock"
-  },
-  {
-    "id": "purple-rain",
-    "artist": "Prince",
-    "title": "Purple Rain",
-    "album": "Purple Rain",
-    "duration": 521,
-    "youtube": "bm03wqLY3Nc",
-    "date": "1984-09-26",
-    "genre": "rock"
   },
   {
     "id": "bohemian-rhapsody",
@@ -213,16 +142,6 @@
     "lrclib": 37457319
   },
   {
-    "id": "sometimes",
-    "artist": "Reamonn",
-    "title": "Sometimes",
-    "album": "Wish",
-    "duration": 245,
-    "youtube": "gAXlXSZHFd4",
-    "date": "2006-01-01",
-    "genre": "rock"
-  },
-  {
     "id": "californication",
     "artist": "Red Hot Chili Peppers",
     "title": "Californication",
@@ -243,36 +162,6 @@
     "date": "1991-01-01",
     "genre": "rock",
     "lrclib": 36939722
-  },
-  {
-    "id": "shape-of-my-heart",
-    "artist": "Sting",
-    "title": "Shape of My Heart",
-    "album": "Ten Summoner's Tales",
-    "duration": 281,
-    "youtube": "NlwIDxCjL-8",
-    "date": "1993-08-23",
-    "genre": "rock"
-  },
-  {
-    "id": "desert-rose",
-    "artist": "Sting",
-    "title": "Desert Rose (ft. Cheb Mami)",
-    "album": "Brand New Day",
-    "duration": 285,
-    "youtube": "C3lWwBslWqg",
-    "date": "2000-01-17",
-    "genre": "rock"
-  },
-  {
-    "id": "here-comes-the-sun",
-    "artist": "The Beatles",
-    "title": "Here Comes the Sun",
-    "album": "Abbey Road",
-    "duration": 186,
-    "youtube": "KQetemT1sWc",
-    "date": "1969-09-26",
-    "genre": "rock"
   },
   {
     "id": "should-i-stay-or-should-i-go",
@@ -305,16 +194,6 @@
     "date": "2004-06-07",
     "genre": "rock",
     "lrclib": 37053843
-  },
-  {
-    "id": "every-breath-you-take",
-    "artist": "The Police",
-    "title": "Every Breath You Take",
-    "album": "Synchronicity",
-    "duration": 253,
-    "youtube": "OMOGaugKpzs",
-    "date": "1983-05-20",
-    "genre": "rock"
   },
   {
     "id": "seven-nation-army",
@@ -638,6 +517,16 @@
     "genre": "pop"
   },
   {
+    "id": "somebody-that-i-used-to-know",
+    "artist": "Gotye",
+    "title": "Somebody That I Used to Know (ft. Kimbra)",
+    "album": "Making Mirrors",
+    "duration": 244,
+    "youtube": "8UVNT4wvIGY",
+    "date": "2011-07-05",
+    "genre": "pop"
+  },
+  {
     "id": "i-miss-you-im-sorry",
     "artist": "Gracie Abrams",
     "title": "I miss you, I'm sorry",
@@ -811,6 +700,16 @@
     "genre": "pop"
   },
   {
+    "id": "lost-on-you",
+    "artist": "LP",
+    "title": "Lost on You",
+    "album": "Lost on You",
+    "duration": 266,
+    "youtube": "hn3wJ1_1Zsg",
+    "date": "2015-11-20",
+    "genre": "pop"
+  },
+  {
     "id": "say-it-right",
     "artist": "Nelly Furtado",
     "title": "Say It Right",
@@ -901,6 +800,36 @@
     "genre": "pop"
   },
   {
+    "id": "sometimes",
+    "artist": "Reamonn",
+    "title": "Sometimes",
+    "album": "Wish",
+    "duration": 245,
+    "youtube": "gAXlXSZHFd4",
+    "date": "2006-01-01",
+    "genre": "pop"
+  },
+  {
+    "id": "umbrella",
+    "artist": "Rihanna",
+    "title": "Umbrella (ft. Jay-Z)",
+    "album": "Good Girl Gone Bad",
+    "duration": 276,
+    "youtube": "CvBfHwUxHIk",
+    "date": "2007-03-29",
+    "genre": "pop"
+  },
+  {
+    "id": "where-have-you-been",
+    "artist": "Rihanna",
+    "title": "Where Have You Been",
+    "album": "Talk That Talk",
+    "duration": 242,
+    "youtube": "HBxt_v0WF6Y",
+    "date": "2012-04-17",
+    "genre": "pop"
+  },
+  {
     "id": "snap",
     "artist": "Rosa Linn",
     "title": "Snap",
@@ -938,6 +867,36 @@
     "duration": 224,
     "youtube": "31crA53Dgu0",
     "date": "2015-12-17",
+    "genre": "pop"
+  },
+  {
+    "id": "until-i-found-you",
+    "artist": "Stephen Sanchez",
+    "title": "Until I Found You",
+    "album": "Angel Face",
+    "duration": 177,
+    "youtube": "GxldQ9eX2wo",
+    "date": "2021-09-01",
+    "genre": "pop"
+  },
+  {
+    "id": "shape-of-my-heart",
+    "artist": "Sting",
+    "title": "Shape of My Heart",
+    "album": "Ten Summoner's Tales",
+    "duration": 281,
+    "youtube": "NlwIDxCjL-8",
+    "date": "1993-08-23",
+    "genre": "pop"
+  },
+  {
+    "id": "desert-rose",
+    "artist": "Sting",
+    "title": "Desert Rose (ft. Cheb Mami)",
+    "album": "Brand New Day",
+    "duration": 285,
+    "youtube": "C3lWwBslWqg",
+    "date": "2000-01-17",
     "genre": "pop"
   },
   {
@@ -1599,6 +1558,26 @@
     "genre": "pop"
   },
   {
+    "id": "another-love",
+    "artist": "Tom Odell",
+    "title": "Another Love",
+    "album": "Long Way Down",
+    "duration": 244,
+    "youtube": "MwpMEbgC7DA",
+    "date": "2012-10-15",
+    "genre": "pop"
+  },
+  {
+    "id": "cant-pretend",
+    "artist": "Tom Odell",
+    "title": "Can't Pretend",
+    "album": "Long Way Down",
+    "duration": 222,
+    "youtube": "dUmtXzuSGu8",
+    "date": "2013-03-06",
+    "genre": "pop"
+  },
+  {
     "id": "lush-life",
     "artist": "Zara Larsson",
     "title": "Lush Life",
@@ -1759,6 +1738,16 @@
     "genre": "alternative & indie"
   },
   {
+    "id": "centuries",
+    "artist": "Fall Out Boy",
+    "title": "Centuries",
+    "album": "American Beauty/American Psycho",
+    "duration": 228,
+    "youtube": "LBr7kECsjcQ",
+    "date": "2014-09-09",
+    "genre": "alternative & indie"
+  },
+  {
     "id": "out-of-my-league",
     "artist": "Fitz and the Tantrums",
     "title": "Out of My League",
@@ -1789,13 +1778,13 @@
     "genre": "alternative & indie"
   },
   {
-    "id": "somebody-that-i-used-to-know",
-    "artist": "Gotye",
-    "title": "Somebody That I Used to Know (ft. Kimbra)",
-    "album": "Making Mirrors",
-    "duration": 244,
-    "youtube": "8UVNT4wvIGY",
-    "date": "2011-07-05",
+    "id": "iris",
+    "artist": "Goo Goo Dolls",
+    "title": "Iris",
+    "album": "City of Angels",
+    "duration": 290,
+    "youtube": "NdYWuo9OFAw",
+    "date": "1998-04-01",
     "genre": "alternative & indie"
   },
   {
@@ -1850,16 +1839,6 @@
     "genre": "alternative & indie"
   },
   {
-    "id": "lost-on-you",
-    "artist": "LP",
-    "title": "Lost on You",
-    "album": "Lost on You",
-    "duration": 266,
-    "youtube": "hn3wJ1_1Zsg",
-    "date": "2015-11-20",
-    "genre": "alternative & indie"
-  },
-  {
     "id": "play-date",
     "artist": "Melanie Martinez",
     "title": "Play Date",
@@ -1891,6 +1870,17 @@
     "genre": "alternative & indie"
   },
   {
+    "id": "wonderwall",
+    "artist": "Oasis",
+    "title": "Wonderwall",
+    "album": "(What's the Story) Morning Glory?",
+    "duration": 279,
+    "youtube": "6hzrDeceEKc",
+    "date": "1995-10-30",
+    "genre": "alternative & indie",
+    "lrclib": 36939761
+  },
+  {
     "id": "life-goes-on",
     "artist": "Oliver Tree",
     "title": "Life Goes On",
@@ -1908,6 +1898,16 @@
     "duration": 237,
     "youtube": "jvU4xWsN7-A",
     "date": "2026-07-05",
+    "genre": "alternative & indie"
+  },
+  {
+    "id": "where-is-my-mind",
+    "artist": "Pixies",
+    "title": "Where Is My Mind?",
+    "album": "Surfer Rosa",
+    "duration": 233,
+    "youtube": "OJ62RzJkYUo",
+    "date": "1988-03-21",
     "genre": "alternative & indie"
   },
   {
@@ -2052,16 +2052,6 @@
     "genre": "alternative & indie"
   },
   {
-    "id": "until-i-found-you",
-    "artist": "Stephen Sanchez",
-    "title": "Until I Found You",
-    "album": "Angel Face",
-    "duration": 177,
-    "youtube": "GxldQ9eX2wo",
-    "date": "2021-09-01",
-    "genre": "alternative & indie"
-  },
-  {
     "id": "freaks",
     "artist": "Surf Curse",
     "title": "Freaks",
@@ -2163,26 +2153,6 @@
     "genre": "alternative & indie"
   },
   {
-    "id": "another-love",
-    "artist": "Tom Odell",
-    "title": "Another Love",
-    "album": "Long Way Down",
-    "duration": 244,
-    "youtube": "MwpMEbgC7DA",
-    "date": "2012-10-15",
-    "genre": "alternative & indie"
-  },
-  {
-    "id": "cant-pretend",
-    "artist": "Tom Odell",
-    "title": "Can't Pretend",
-    "album": "Long Way Down",
-    "duration": 222,
-    "youtube": "dUmtXzuSGu8",
-    "date": "2013-03-06",
-    "genre": "alternative & indie"
-  },
-  {
     "id": "tear-in-my-heart",
     "artist": "Twenty One Pilots",
     "title": "Tear in My Heart",
@@ -2255,6 +2225,16 @@
     "genre": "80s & 90s"
   },
   {
+    "id": "eyes-without-a-face",
+    "artist": "Billy Idol",
+    "title": "Eyes Without a Face",
+    "album": "Rebel Yell",
+    "duration": 299,
+    "youtube": "9OFpfTd0EIs",
+    "date": "1984-06-06",
+    "genre": "80s & 90s"
+  },
+  {
     "id": "total-eclipse-of-the-heart",
     "artist": "Bonnie Tyler",
     "title": "Total Eclipse of the Heart",
@@ -2293,6 +2273,16 @@
     "duration": 227,
     "youtube": "j4jtIDaeaWI",
     "date": "1990-07-16",
+    "genre": "80s & 90s"
+  },
+  {
+    "id": "im-still-standing",
+    "artist": "Elton John",
+    "title": "I'm Still Standing",
+    "album": "Too Low for Zero",
+    "duration": 182,
+    "youtube": "ZHwVBirqD2s",
+    "date": "1983-07-22",
     "genre": "80s & 90s"
   },
   {
@@ -2367,6 +2357,16 @@
     "genre": "80s & 90s"
   },
   {
+    "id": "purple-rain",
+    "artist": "Prince",
+    "title": "Purple Rain",
+    "album": "Purple Rain",
+    "duration": 521,
+    "youtube": "bm03wqLY3Nc",
+    "date": "1984-09-26",
+    "genre": "80s & 90s"
+  },
+  {
     "id": "kiss-me",
     "artist": "Sixpence None the Richer",
     "title": "Kiss Me",
@@ -2376,6 +2376,16 @@
     "date": "1998-01-01",
     "genre": "80s & 90s",
     "lrclib": 37489233
+  },
+  {
+    "id": "every-breath-you-take",
+    "artist": "The Police",
+    "title": "Every Breath You Take",
+    "album": "Synchronicity",
+    "duration": 253,
+    "youtube": "OMOGaugKpzs",
+    "date": "1983-05-20",
+    "genre": "80s & 90s"
   },
   {
     "id": "gangstas-paradise",
@@ -2499,26 +2509,6 @@
     "duration": 213,
     "youtube": "cswfR85D7jM",
     "date": "2024-05-03",
-    "genre": "hip-hop & r&b"
-  },
-  {
-    "id": "umbrella",
-    "artist": "Rihanna",
-    "title": "Umbrella (ft. Jay-Z)",
-    "album": "Good Girl Gone Bad",
-    "duration": 276,
-    "youtube": "CvBfHwUxHIk",
-    "date": "2007-03-29",
-    "genre": "hip-hop & r&b"
-  },
-  {
-    "id": "where-have-you-been",
-    "artist": "Rihanna",
-    "title": "Where Have You Been",
-    "album": "Talk That Talk",
-    "duration": 242,
-    "youtube": "HBxt_v0WF6Y",
-    "date": "2012-04-17",
     "genre": "hip-hop & r&b"
   },
   {
@@ -2761,6 +2751,16 @@
     "duration": 141,
     "youtube": "rBrd_3VMC3c",
     "date": "1967-09-01",
+    "genre": "jazz, soul & oldies"
+  },
+  {
+    "id": "here-comes-the-sun",
+    "artist": "The Beatles",
+    "title": "Here Comes the Sun",
+    "album": "Abbey Road",
+    "duration": 186,
+    "youtube": "KQetemT1sWc",
+    "date": "1969-09-26",
     "genre": "jazz, soul & oldies"
   },
   {
