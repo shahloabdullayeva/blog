@@ -30,6 +30,17 @@
     "genre": "pop"
   },
   {
+    "id": "ordinary",
+    "artist": "Alex Warren",
+    "title": "Ordinary",
+    "album": "Ordinary",
+    "duration": 187,
+    "youtube": "u2ah9tWTkmk",
+    "date": "2025-02-07",
+    "genre": "pop",
+    "lrclib": 36889526
+  },
+  {
     "id": "moral-of-the-story",
     "artist": "Ashe",
     "title": "Moral of the Story",
@@ -231,6 +242,17 @@
     "genre": "pop"
   },
   {
+    "id": "hot-n-cold",
+    "artist": "Katy Perry",
+    "title": "Hot N Cold",
+    "album": "One of the Boys",
+    "duration": 220,
+    "youtube": "K9udREBvMdE",
+    "date": "2008-09-09",
+    "genre": "pop",
+    "lrclib": 24212137
+  },
+  {
     "id": "firework",
     "artist": "Katy Perry",
     "title": "Firework",
@@ -270,6 +292,17 @@
     "date": "2008-09-26",
     "genre": "pop",
     "lrclib": 36978008
+  },
+  {
+    "id": "paparazzi",
+    "artist": "Lady Gaga",
+    "title": "Paparazzi",
+    "album": "The Fame",
+    "duration": 207,
+    "youtube": "OSb14XGzkrs",
+    "date": "2009-07-06",
+    "genre": "pop",
+    "lrclib": 37492263
   },
   {
     "id": "bad-romance",
@@ -602,6 +635,17 @@
     "genre": "pop"
   },
   {
+    "id": "look-what-you-made-me-do",
+    "artist": "Taylor Swift",
+    "title": "Look What You Made Me Do",
+    "album": "reputation",
+    "duration": 215,
+    "youtube": "3K0RzZGpyds",
+    "date": "2017-08-24",
+    "genre": "pop",
+    "lrclib": 34001595
+  },
+  {
     "id": "call-it-what-you-want",
     "artist": "Taylor Swift",
     "title": "Call It What You Want",
@@ -722,6 +766,39 @@
     "youtube": "osdoLjUNFnA",
     "date": "2020-07-24",
     "genre": "pop"
+  },
+  {
+    "id": "illicit-affairs",
+    "artist": "Taylor Swift",
+    "title": "illicit affairs",
+    "album": "folklore",
+    "duration": 191,
+    "youtube": "MLV2SJKWk4M",
+    "date": "2020-07-24",
+    "genre": "pop",
+    "lrclib": 589888
+  },
+  {
+    "id": "mirrorball",
+    "artist": "Taylor Swift",
+    "title": "mirrorball",
+    "album": "folklore",
+    "duration": 210,
+    "youtube": "KaM1bCuG4xo",
+    "date": "2020-07-24",
+    "genre": "pop",
+    "lrclib": 34819615
+  },
+  {
+    "id": "my-tears-ricochet",
+    "artist": "Taylor Swift",
+    "title": "my tears ricochet",
+    "album": "folklore",
+    "duration": 256,
+    "youtube": "OWbDJFtHl3w",
+    "date": "2020-07-24",
+    "genre": "pop",
+    "lrclib": 37336259
   },
   {
     "id": "this-is-me-trying",
@@ -1404,6 +1481,17 @@
     "genre": "rock"
   },
   {
+    "id": "seven-nation-army",
+    "artist": "The White Stripes",
+    "title": "Seven Nation Army",
+    "album": "Elephant",
+    "duration": 238,
+    "youtube": "0J2QdDbelmY",
+    "date": "2003-03-07",
+    "genre": "rock",
+    "lrclib": 36968265
+  },
+  {
     "id": "bring-me-to-life",
     "artist": "Evanescence",
     "title": "Bring Me to Life",
@@ -1423,6 +1511,17 @@
     "youtube": "eVTXPUF4Oz4",
     "date": "2001-10-09",
     "genre": "metal & nu metal"
+  },
+  {
+    "id": "somewhere-i-belong",
+    "artist": "Linkin Park",
+    "title": "Somewhere I Belong",
+    "album": "Meteora",
+    "duration": 226,
+    "youtube": "zsCD5XCu6CM",
+    "date": "2003-03-24",
+    "genre": "metal & nu metal",
+    "lrclib": 37357298
   },
   {
     "id": "faint",
@@ -1447,6 +1546,17 @@
     "lrclib": 36067637
   },
   {
+    "id": "what-ive-done",
+    "artist": "Linkin Park",
+    "title": "What I've Done",
+    "album": "Minutes to Midnight",
+    "duration": 206,
+    "youtube": "8sgycukafqQ",
+    "date": "2007-04-02",
+    "genre": "metal & nu metal",
+    "lrclib": 37476241
+  },
+  {
     "id": "the-emptiness-machine",
     "artist": "Linkin Park",
     "title": "The Emptiness Machine",
@@ -1455,6 +1565,17 @@
     "youtube": "SRXH9AbT280",
     "date": "2024-09-05",
     "genre": "metal & nu metal"
+  },
+  {
+    "id": "for-whom-the-bell-tolls",
+    "artist": "Metallica",
+    "title": "For Whom the Bell Tolls",
+    "album": "Ride the Lightning",
+    "duration": 310,
+    "youtube": "TStMsQhwceI",
+    "date": "1984-07-27",
+    "genre": "metal & nu metal",
+    "lrclib": 33432335
   },
   {
     "id": "master-of-puppets",
@@ -1751,6 +1872,17 @@
     "genre": "alternative & indie"
   },
   {
+    "id": "i-bet-on-losing-dogs",
+    "artist": "Mitski",
+    "title": "I Bet on Losing Dogs",
+    "album": "Puberty 2",
+    "duration": 171,
+    "youtube": "XfMBdq5iFnw",
+    "date": "2016-06-17",
+    "genre": "alternative & indie",
+    "lrclib": 35123751
+  },
+  {
     "id": "washing-machine-heart",
     "artist": "Mitski",
     "title": "Washing Machine Heart",
@@ -1789,6 +1921,127 @@
     "youtube": "XFkzRNyygfk",
     "date": "1992-09-21",
     "genre": "alternative & indie"
+  },
+  {
+    "id": "high-and-dry",
+    "artist": "Radiohead",
+    "title": "High and Dry",
+    "album": "The Bends",
+    "duration": 259,
+    "youtube": "7qFfFVSerQo",
+    "date": "1995-03-06",
+    "genre": "alternative & indie",
+    "lrclib": 34827877
+  },
+  {
+    "id": "fake-plastic-trees",
+    "artist": "Radiohead",
+    "title": "Fake Plastic Trees",
+    "album": "The Bends",
+    "duration": 292,
+    "youtube": "n5h0qHwNrHk",
+    "date": "1995-05-15",
+    "genre": "alternative & indie",
+    "lrclib": 36957825
+  },
+  {
+    "id": "street-spirit-fade-out",
+    "artist": "Radiohead",
+    "title": "Street Spirit (Fade Out)",
+    "album": "The Bends",
+    "duration": 259,
+    "youtube": "LCJblaUkkfc",
+    "date": "1996-01-22",
+    "genre": "alternative & indie",
+    "lrclib": 37021345
+  },
+  {
+    "id": "exit-music-for-a-film",
+    "artist": "Radiohead",
+    "title": "Exit Music (For a Film)",
+    "album": "OK Computer",
+    "duration": 265,
+    "youtube": "50rlHVe6g9Q",
+    "date": "1997-05-21",
+    "genre": "alternative & indie",
+    "lrclib": 36933467
+  },
+  {
+    "id": "let-down",
+    "artist": "Radiohead",
+    "title": "Let Down",
+    "album": "OK Computer",
+    "duration": 299,
+    "youtube": "-Z_NvVMUcG8",
+    "date": "1997-05-21",
+    "genre": "alternative & indie",
+    "lrclib": 37044038
+  },
+  {
+    "id": "paranoid-android",
+    "artist": "Radiohead",
+    "title": "Paranoid Android",
+    "album": "OK Computer",
+    "duration": 387,
+    "youtube": "fHiGbolFFGw",
+    "date": "1997-05-26",
+    "genre": "alternative & indie",
+    "lrclib": 36936798
+  },
+  {
+    "id": "karma-police",
+    "artist": "Radiohead",
+    "title": "Karma Police",
+    "album": "OK Computer",
+    "duration": 263,
+    "youtube": "1uYWYWPc9HU",
+    "date": "1997-08-25",
+    "genre": "alternative & indie",
+    "lrclib": 37456989
+  },
+  {
+    "id": "no-surprises",
+    "artist": "Radiohead",
+    "title": "No Surprises",
+    "album": "OK Computer",
+    "duration": 227,
+    "youtube": "u5CVsCnxyXg",
+    "date": "1998-01-12",
+    "genre": "alternative & indie",
+    "lrclib": 37058462
+  },
+  {
+    "id": "reckoner",
+    "artist": "Radiohead",
+    "title": "Reckoner",
+    "album": "In Rainbows",
+    "duration": 288,
+    "youtube": "_uofQD-N6UI",
+    "date": "2007-10-10",
+    "genre": "alternative & indie",
+    "lrclib": 36958229
+  },
+  {
+    "id": "weird-fishes-arpeggi",
+    "artist": "Radiohead",
+    "title": "Weird Fishes/Arpeggi",
+    "album": "In Rainbows",
+    "duration": 318,
+    "youtube": "V_Ydoe4Q-Gg",
+    "date": "2007-10-10",
+    "genre": "alternative & indie",
+    "lrclib": 7973367
+  },
+  {
+    "id": "jigsaw-falling-into-place",
+    "artist": "Radiohead",
+    "title": "Jigsaw Falling into Place",
+    "album": "In Rainbows",
+    "duration": 259,
+    "youtube": "GoLJJRIWCLU",
+    "date": "2008-01-14",
+    "genre": "alternative & indie",
+    "lrclib": 37106314
   },
   {
     "id": "i-thought-i-saw-your-face-today",
@@ -1861,6 +2114,17 @@
     "genre": "alternative & indie"
   },
   {
+    "id": "no-one-noticed",
+    "artist": "The Marías",
+    "title": "No One Noticed",
+    "album": "Submarine",
+    "duration": 236,
+    "youtube": "Qn8F_u0vBNI",
+    "date": "2024-05-31",
+    "genre": "alternative & indie",
+    "lrclib": 37069833
+  },
+  {
     "id": "notion",
     "artist": "The Rare Occasions",
     "title": "Notion",
@@ -1921,6 +2185,17 @@
     "genre": "alternative & indie"
   },
   {
+    "id": "tear-in-my-heart",
+    "artist": "Twenty One Pilots",
+    "title": "Tear in My Heart",
+    "album": "Blurryface",
+    "duration": 193,
+    "youtube": "nky4me4NP70",
+    "date": "2015-04-06",
+    "genre": "alternative & indie",
+    "lrclib": 36786839
+  },
+  {
     "id": "stressed-out",
     "artist": "Twenty One Pilots",
     "title": "Stressed Out",
@@ -1949,6 +2224,17 @@
     "youtube": "UprcpdwuwCg",
     "date": "2016-06-16",
     "genre": "alternative & indie"
+  },
+  {
+    "id": "wait-a-minute",
+    "artist": "WILLOW",
+    "title": "Wait a Minute!",
+    "album": "Ardipithecus",
+    "duration": 196,
+    "youtube": "1H-slVEJcN4",
+    "date": "2015-12-11",
+    "genre": "alternative & indie",
+    "lrclib": 37155383
   },
   {
     "id": "dancing-queen",
@@ -1981,6 +2267,17 @@
     "genre": "80s & 90s"
   },
   {
+    "id": "smalltown-boy",
+    "artist": "Bronski Beat",
+    "title": "Smalltown Boy",
+    "album": "The Age of Consent",
+    "duration": 304,
+    "youtube": "E5i2Wa7daDA",
+    "date": "1984-05-25",
+    "genre": "80s & 90s",
+    "lrclib": 37442907
+  },
+  {
     "id": "died-in-your-arms",
     "artist": "Cutting Crew",
     "title": "(I Just) Died in Your Arms",
@@ -1999,6 +2296,17 @@
     "youtube": "j4jtIDaeaWI",
     "date": "1990-07-16",
     "genre": "80s & 90s"
+  },
+  {
+    "id": "lemon-tree",
+    "artist": "Fools Garden",
+    "title": "Lemon Tree",
+    "album": "Dish of the Day",
+    "duration": 192,
+    "youtube": "wCQfkEkePx8",
+    "date": "1995-01-01",
+    "genre": "80s & 90s",
+    "lrclib": 36980803
   },
   {
     "id": "careless-whisper",
@@ -2061,6 +2369,17 @@
     "genre": "80s & 90s"
   },
   {
+    "id": "kiss-me",
+    "artist": "Sixpence None the Richer",
+    "title": "Kiss Me",
+    "album": "Sixpence None the Richer",
+    "duration": 196,
+    "youtube": "Jnq9wPDoDKg",
+    "date": "1998-01-01",
+    "genre": "80s & 90s",
+    "lrclib": 37489233
+  },
+  {
     "id": "gangstas-paradise",
     "artist": "Coolio",
     "title": "Gangsta's Paradise (ft. L.V.)",
@@ -2101,6 +2420,29 @@
     "genre": "hip-hop & r&b"
   },
   {
+    "id": "love-the-way-you-lie",
+    "artist": "Eminem",
+    "title": "Love the Way You Lie",
+    "album": "Recovery",
+    "duration": 267,
+    "youtube": "uelHwf8o7_U",
+    "date": "2010-08-09",
+    "genre": "hip-hop & r&b",
+    "lrclib": 18606617,
+    "featuring": "Rihanna"
+  },
+  {
+    "id": "ivy",
+    "artist": "Frank Ocean",
+    "title": "Ivy",
+    "album": "Blonde",
+    "duration": 249,
+    "youtube": "AE005nZeF-A",
+    "date": "2016-08-20",
+    "genre": "hip-hop & r&b",
+    "lrclib": 34464828
+  },
+  {
     "id": "me-myself-and-i",
     "artist": "G-Eazy & Bebe Rexha",
     "title": "Me, Myself & I",
@@ -2129,6 +2471,17 @@
     "youtube": "UceaB4D0jpo",
     "date": "2017-09-15",
     "genre": "hip-hop & r&b"
+  },
+  {
+    "id": "better-now",
+    "artist": "Post Malone",
+    "title": "Better Now",
+    "album": "beerbongs & bentleys",
+    "duration": 231,
+    "youtube": "nqggm9o2Z9k",
+    "date": "2018-05-18",
+    "genre": "hip-hop & r&b",
+    "lrclib": 36967529
   },
   {
     "id": "sunflower",
@@ -2169,6 +2522,17 @@
     "youtube": "HBxt_v0WF6Y",
     "date": "2012-04-17",
     "genre": "hip-hop & r&b"
+  },
+  {
+    "id": "call-out-my-name",
+    "artist": "The Weeknd",
+    "title": "Call Out My Name",
+    "album": "My Dear Melancholy,",
+    "duration": 229,
+    "youtube": "rsEne1ZiQrk",
+    "date": "2018-03-30",
+    "genre": "hip-hop & r&b",
+    "lrclib": 35276277
   },
   {
     "id": "save-your-tears",
@@ -2360,6 +2724,16 @@
     "youtube": "0WuqXvfLNj0",
     "date": "2006-10-27",
     "genre": "jazz, soul & oldies"
+  },
+  {
+    "id": "por-una-cabeza",
+    "artist": "Carlos Gardel",
+    "title": "Por una Cabeza",
+    "duration": 150,
+    "youtube": "SJ1aTPM-dyE",
+    "date": "1935-01-01",
+    "genre": "jazz, soul & oldies",
+    "lrclib": 36266651
   },
   {
     "id": "fly-me-to-the-moon",
@@ -2723,6 +3097,17 @@
     "instrumental": true
   },
   {
+    "id": "idea-9",
+    "artist": "Gibran Alcocer",
+    "title": "Idea 9",
+    "album": "Idea 9",
+    "duration": 138,
+    "youtube": "zdztQg038yc",
+    "date": "2021-01-01",
+    "genre": "piano & film scores",
+    "instrumental": true
+  },
+  {
     "id": "cornfield-chase",
     "artist": "Hans Zimmer",
     "title": "Cornfield Chase",
@@ -2767,6 +3152,16 @@
     "instrumental": true
   },
   {
+    "id": "passacaglia",
+    "artist": "Pianovus",
+    "title": "Passacaglia (Handel/Halvorsen, piano)",
+    "duration": 155,
+    "youtube": "lsyGK7hxSQQ",
+    "date": "2020-01-01",
+    "genre": "piano & film scores",
+    "instrumental": true
+  },
+  {
     "id": "comptine-dun-autre-ete",
     "artist": "Yann Tiersen",
     "title": "Comptine d'un autre été, l'après-midi",
@@ -2797,6 +3192,17 @@
     "date": "2023-01-01",
     "genre": "uzbek & world",
     "lrclib": 12398627
+  },
+  {
+    "id": "mayonaka-no-door-stay-with-me",
+    "artist": "Miki Matsubara",
+    "title": "Mayonaka no Door (Stay with Me)",
+    "album": "Pocket Park",
+    "duration": 312,
+    "youtube": "xrOEMHsCtPE",
+    "date": "1979-11-05",
+    "genre": "uzbek & world",
+    "lrclib": 36851869
   },
   {
     "id": "man-mast",
