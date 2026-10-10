@@ -39,7 +39,31 @@ main {
   max-width: var(--max-w);
 }
 
-.site-header { margin-bottom: 3rem; }
+.site-header {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.look-toggle {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.look-toggle:hover { color: var(--accent); }
+
+.look-toggle:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
 
 .site-title {
   font-size: 1rem;
@@ -349,3 +373,42 @@ a:hover { text-decoration: underline; }
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+html.sky {
+  --bg-elev: rgba(10, 12, 18, 0.6);
+  --fg: #ededed;
+  --fg-muted: #b9bcc6;
+  --accent: #7ee08a;
+  --rule: rgba(255, 255, 255, 0.16);
+  background: #1c2433;
+}
+
+html.sky body {
+  background: transparent;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+html.sky .site-header,
+html.sky main {
+  position: relative;
+  z-index: 1;
+}
+
+html.sky .contact-form button { text-shadow: none; }
+
+#sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+.sky-status {
+  margin: 2.9rem 0 0;
+  font-size: 0.8125rem;
+  max-width: 52ch;
+}
+
+.sky-status span { color: var(--fg-muted); }

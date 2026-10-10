@@ -17,6 +17,50 @@ if (isPostPage) {
   });
 }
 
+let skyLoading = null;
+
+setupLook();
+
+function setupLook() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'look-toggle';
+  header.append(button);
+
+  let on = false;
+  try { on = localStorage.getItem('look') === 'sky'; } catch (e) {}
+
+  const apply = () => {
+    document.documentElement.classList.toggle('sky', on);
+    button.textContent = on ? 'classic look' : 'new look';
+    if (on) loadSky().then(() => { if (on) window.sky.start(); }).catch(() => {});
+    else if (window.sky) window.sky.stop();
+  };
+
+  button.addEventListener('click', () => {
+    on = !on;
+    try { localStorage.setItem('look', on ? 'sky' : 'classic'); } catch (e) {}
+    apply();
+  });
+
+  apply();
+}
+
+function loadSky() {
+  if (!skyLoading) {
+    skyLoading = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = '/sky.js';
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.append(script);
+    });
+  }
+  return skyLoading;
+}
+
 // Clean, GitHub-style permalinks (/posts/<slug>, /poems/<lang>/<slug>, /translations/<slug>)
 // are served by a Caddy rewrite that points them at post.html without changing the address
 // bar; this recovers the slug/type/lang from the visible path instead of a query string.
