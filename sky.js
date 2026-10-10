@@ -124,7 +124,7 @@
     if (!running) return;
     size();
     const wx = live.wx, hol = holidayToday();
-    stars = Array.from({ length: Math.round(W * H / 5000) }, () => ({ x: R(0, W), y: R(0, H * .75), r: R(.4, 1.5), p: R(0, 6) }));
+    stars = Array.from({ length: Math.round(W * H / 5000) }, () => ({ x: R(0, W), y: R(0, H), r: R(.4, 1.5), p: R(0, 6) }));
     clouds = Array.from({ length: CLOUD_COUNT[wx] }, () => {
       const s = R(.6, 1.4) * (wx === 'partly' ? 1 : 1.4);
       return {
@@ -159,6 +159,21 @@
       ctx.arc(c.x + p.dx * c.s, c.y + p.dy * c.s, p.r * c.s, 0, 7);
       ctx.fill();
     }
+  }
+
+  function ridge(base, amp, scale, shift, col) {
+    ctx.fillStyle = rgb(col);
+    ctx.beginPath();
+    ctx.moveTo(0, H);
+    for (let x = 0; x <= W + 6; x += 6) {
+      const u = x * scale + shift;
+      const p = .55 * (1 - Math.abs(Math.sin(u * .0035 + .6))) +
+        .3 * (1 - Math.abs(Math.sin(u * .009 + 2.1))) +
+        .15 * (1 - Math.abs(Math.sin(u * .021 + 4)));
+      ctx.lineTo(x, H * base - H * amp * p);
+    }
+    ctx.lineTo(W, H);
+    ctx.fill();
   }
 
   function heart(x, y, s, c) {
@@ -252,6 +267,9 @@
       ctx.fill();
       ctx.globalAlpha = 1;
     }
+
+    ridge(.86, .13, 1, 0, mix(bot, [8, 10, 16], .45));
+    ridge(.93, .1, 1.7, 900, mix(bot, [8, 10, 16], .75));
 
     const cCol = alt > 0 ? (wx === 'storm' ? [54, 60, 72] : wx === 'clear' || wx === 'partly' ? [106, 120, 140] : [86, 96, 112]) : [44, 50, 64];
     for (const c of clouds) {
